@@ -67,6 +67,11 @@ img {
     right: 60px;
   }
 }
+@media screen and (min-width: 1025px) {
+  .btnHamburger {
+    display: none;
+  }
+}
 
 /* 3本線の1本ごとに共通するスタイルを指定 ---------------------- */
 .btnHamburger .line {
@@ -140,6 +145,12 @@ nav {
   opacity: 0;
   transition: 0.5s;
 }
+@media screen and (min-width: 1025px) {
+  nav ul {
+    display: flex;
+    justify-content: space-around;
+  }
+}
 nav ul li a {
   color: #554A45;
 }
@@ -148,10 +159,29 @@ nav ul li a {
     font-size: 25px;
   }
 }
+@media screen and (min-width: 1025px) {
+  nav ul li a {
+    display: block;
+    font-size: 20px;
+  }
+}
 @media screen and (min-width: 768px) {
   nav {
     font-size: 25px;
     margin-top: 200px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  nav {
+    opacity: 1;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    z-index: 1000;
+    line-height: 100px;
+    background: #fff;
+    margin: 0 auto;
+    width: 100%;
   }
 }
 
@@ -228,6 +258,11 @@ header h1 {
     width: 30px;
   }
 }
+@media screen and (min-width: 1025px) {
+  header h1 {
+    z-index: 2000;
+  }
+}
 
 .top-main {
   position: relative;
@@ -244,6 +279,7 @@ header h1 {
   .top-main {
     width: 1920px;
     overflow: hidden;
+    padding-top: 100px;
   }
 }
 
@@ -314,6 +350,11 @@ h2 span {
     font-size: 30px;
   }
 }
+@media screen and (min-width: 1025px) {
+  .section-title h3 {
+    font-size: 35px;
+  }
+}
 
 #CONCEPT p {
   text-align: center;
@@ -342,9 +383,19 @@ h2 span {
     font-size: 25px;
   }
 }
+@media screen and (min-width: 1025px) {
+  #CONCEPT #concept-title {
+    font-size: 40px;
+  }
+}
 @media screen and (min-width: 768px) {
   #CONCEPT #concept-text {
     font-size: 16px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  #CONCEPT #concept-text {
+    font-size: 24px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -353,14 +404,17 @@ h2 span {
   }
 }
 
+#choco1 {
+  width: 100vh;
+}
+
 #HISTORY {
   position: relative;
 }
-
 #history-text1-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: start;
   margin-bottom: 20px;
 }
 
@@ -370,6 +424,13 @@ h2 span {
 @media screen and (min-width: 768px) {
   #history_img {
     width: 559px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  #history_img {
+    position: absolute;
+    top: 30%;
+    left: 10%;
   }
 }
 
@@ -385,6 +446,13 @@ h2 span {
     width: 668px;
   }
 }
+@media screen and (min-width: 1025px) {
+  #history-text-wrapper {
+    position: absolute;
+    top: 800%;
+    right: 7%;
+  }
+}
 
 .history-text1 {
   font-size: 12px;
@@ -393,7 +461,13 @@ h2 span {
 }
 @media screen and (min-width: 768px) {
   .history-text1 {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .history-text1 {
     font-size: 20px;
+    width: 600px;
   }
 }
 
@@ -408,6 +482,12 @@ h2 span {
   }
   #history-text2 br {
     display: none;
+  }
+}
+@media screen and (min-width: 1025px) {
+  #history-text2 {
+    font-size: 18px;
+    width: 700px;
   }
 }
 
@@ -427,6 +507,13 @@ h2 span {
     margin-right: auto;
     margin-left: auto;
     letter-spacing: 2px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  #history-text3 {
+    position: absolute;
+    top: 4000%;
+    left: 28%;
   }
 }
 @media screen and (min-width: 768px) {
@@ -450,6 +537,13 @@ h2 span {
     margin-left: 20%;
   }
 }
+@media screen and (min-width: 1025px) {
+  #copy {
+    position: absolute;
+    top: 2200%;
+    left: 0%;
+  }
+}
 #copy p {
   writing-mode: vertical-rl;
   margin: 0 15px;
@@ -466,21 +560,41 @@ h2 span {
     margin-top: 100px;
   }
 }
+@media screen and (min-width: 1025px) {
+  #copy p {
+    font-size: 48px;
+  }
+}
 #copy :first-child {
   margin-top: 200px;
 }
 
 #side-face {
   position: absolute;
-  top: 50%;
-  right: 0;
-  width: 400px;
+  top: 65%;
+  right: -80px;
+  width: 500px;
 }
 @media screen and (min-width: 768px) {
   #side-face {
     width: 837px;
-    top: 36%;
+    top: 150%;
+    right: 0;
   }
+}
+@media screen and (min-width: 1025px) {
+  #side-face {
+    width: 1100px;
+    top: 2580%;
+  }
+}
+
+#blur1 {
+  position: absolute;
+  width: 1200px;
+  top: 50%;
+  left: -10%;
+  z-index: -10000;
 }
 
 #PRODUCT {
@@ -490,6 +604,12 @@ h2 span {
   #PRODUCT {
     height: 700px;
     margin-bottom: 550px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  #PRODUCT {
+    margin-top: 2000px;
+    height: 1000px;
   }
 }
 #PRODUCT p {
@@ -546,6 +666,12 @@ h2 span {
     left: 15%;
   }
 }
+@media screen and (min-width: 1025px) {
+  #product-box {
+    left: 30%;
+    top: 35%;
+  }
+}
 
 #choco-product {
   width: 320px;
@@ -561,6 +687,11 @@ h2 span {
     left: 44%;
   }
 }
+@media screen and (min-width: 1025px) {
+  #choco-product {
+    top: 65%;
+  }
+}
 
 #blur {
   position: absolute;
@@ -568,6 +699,13 @@ h2 span {
   z-index: 2;
   top: 10%;
   left: 0%;
+}
+@media screen and (min-width: 1025px) {
+  #blur {
+    top: 15%;
+    left: 20%;
+    width: 1122px;
+  }
 }
 
 #contents {
@@ -582,10 +720,15 @@ h2 span {
 @media screen and (min-width: 768px) {
   #contents {
     width: 150px;
-    border-radius: 20px;
+    border-radius: 15px;
     font-size: 12px;
     margin-top: -20px;
     margin-left: 2px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  #contents {
+    margin-left: 0;
   }
 }
 
@@ -603,6 +746,7 @@ h2 span {
     width: 150px;
     font-size: 12px;
     margin-top: -15px;
+    border-radius: 15px;
   }
 }
 
@@ -633,6 +777,11 @@ h2 span {
   text-align: center;
   line-height: 2;
 }
+@media screen and (min-width: 1025px) {
+  #LINEUP p {
+    margin-top: 10px;
+  }
+}
 
 #lineup-title {
   font-size: 14px;
@@ -643,6 +792,11 @@ h2 span {
     letter-spacing: 2px;
     margin-top: -90px;
     margin-bottom: 80px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  #lineup-title {
+    font-size: 20px;
   }
 }
 
@@ -657,11 +811,19 @@ h2 span {
     width: 720px;
   }
 }
+@media screen and (min-width: 1025px) {
+  #lineup-wrapper {
+    width: 800px;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 
 .top-items {
   display: flex;
   justify-content: space-around;
 }
+
 .bottom-items {
   display: flex;
   justify-content: space-around;
@@ -671,10 +833,22 @@ h2 span {
   display: block;
   margin: 0 auto;
 }
+@media screen and (min-width: 1025px) {
+  .left-items img {
+    width: 200px;
+    align-items: center;
+  }
+}
+
 .right-items img {
   width: 150px;
   display: block;
   margin: 0 auto;
+}
+@media screen and (min-width: 1025px) {
+  .right-items img {
+    width: 200px;
+  }
 }
 
 .lineup-item-title {
@@ -689,14 +863,29 @@ h2 span {
   margin-left: 40px;
   font-size: 10px;
 }
+@media screen and (min-width: 1025px) {
+  .prace-spacing {
+    font-size: 16px;
+  }
+}
 
 .gift-left {
   margin: 0 auto;
+}
+@media screen and (min-width: 1025px) {
+  .gift-left {
+    margin-left: 20%;
+  }
 }
 
 .gift-right {
   margin: 0 auto;
   margin-top: 8px;
+}
+@media screen and (min-width: 1025px) {
+  .gift-right {
+    margin-right: 20%;
+  }
 }
 
 #gift-cap {
@@ -711,7 +900,6 @@ h2 span {
     margin-bottom: 20px;
   }
 }
-
 #gift-nomal {
   width: 164px;
   display: block;
@@ -1022,10 +1210,23 @@ iframe {
     margin-left: 20px;
   }
 }
+@media screen and (min-width: 1025px) {
+  iframe {
+    position: absolute;
+    left: 10%;
+    width: 50%;
+    height: 500px;
+  }
+}
 
 @media screen and (min-width: 768px) {
   #ACCESS {
     position: relative;
+  }
+}
+@media screen and (min-width: 1025px) {
+  #ACCESS {
+    padding-bottom: 1000px;
   }
 }
 #ACCESS #sibuya-honten {
@@ -1044,6 +1245,15 @@ iframe {
     position: absolute;
     top: 40%;
     left: 55%;
+  }
+}
+@media screen and (min-width: 1025px) {
+  #ACCESS #sibuya-honten {
+    font-size: 20px;
+    width: 128px;
+    line-height: 52px;
+    top: 30%;
+    left: 65%;
   }
 }
 #ACCESS p {
@@ -1066,6 +1276,12 @@ iframe {
     position: absolute;
     top: 55%;
     left: 60%;
+  }
+}
+@media screen and (min-width: 1025px) {
+  #ACCESS #access-text-wrapper {
+    left: 67%;
+    top: 40%;
   }
 }
 

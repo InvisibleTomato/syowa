@@ -29,7 +29,7 @@
 <body>
     <div id="coverlayer">
 
-        <img src="" alt="">
+       
     </div>
     <!-- ハンバーガーメニュー -->
     <div class="btnHamburger">
@@ -60,7 +60,9 @@
     </header>
 
     <!-- ローディング時のアニメーション -->
-    <!--  -->
+    <div id="loading-screen">
+        <div id="loading-text">ありがとう<span id="loding-spacer">を伝えたいあの人に・・・</div>
+    </div>
 
     <!-- top main -->
     <div class="top-main">
@@ -93,7 +95,10 @@
                  プレゼントにぴったりなチョコレートを<br >
                  作りました。
             </p>
-            <img src="./images/iphone_choco.png" alt="">
+            <picture>
+                <source id="choco1" srcset="./images/choco_1.png" media="(min-width: 768px)" type="image/png">
+                <img src="./images/choco_1.png" alt=””>
+            </picture>
         </div>
 
         <div id="HISTORY" class="scr-target">
@@ -129,7 +134,8 @@
 
             <!-- あとで差し替え＆調整予定 -->
 
-            <img src="./images/side-face.png" alt="" id="side-face">
+            <img src="./images/./face/pc-face.png" alt="" id="side-face">
+            <!-- <img src="./images/blur.png" id="blur1" alt=""> -->
 
             <p id="history-text3">この度、本来は板チョコとしての昔懐かしい<br>
                 ミルクチョコレートをプレゼント用限定生産として<br>
