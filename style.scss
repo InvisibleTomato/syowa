@@ -98,13 +98,15 @@ img {
         height: 50px;
         right: 60px;
         }
+
+        @include mq(pc) {
+        
+            display: none;
+         }
   }
 
   
-       @include mq(pc) {
-        
-         display: none;
-      }
+       
   
   /* 3本線の1本ごとに共通するスタイルを指定 ---------------------- */
   .btnHamburger .line {
@@ -174,6 +176,16 @@ nav {
     width: 100%;
     opacity: 0;
     transition: 0.5s;
+
+    ul {
+        
+             @include mq(pc) {
+              display: flex;
+              justify-content: space-around;
+              
+              
+            }
+    }
     
      ul li a {
         color: #554A45;
@@ -181,12 +193,32 @@ nav {
         @include mq(tab) {
             font-size: 25px;
         }
+
+        
+             @include mq(pc) {
+              display: block;
+             font-size: 20px;  
+            }
     }
 
     @include mq(tab) {
         font-size: 25px;
         margin-top: 200px;
     }
+
+    
+         @include mq(pc) {
+            opacity: 1;
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            z-index: 1000;
+            line-height: 100px;
+            background: #fff;
+            margin: 0 auto;
+            width: 100%;
+            
+        }
     
 }
 
@@ -259,6 +291,8 @@ header {
     height: 50px;
     z-index: 1000;
 
+    
+         
    
 }
 
@@ -272,6 +306,12 @@ header h1 {
         left: 48%;
         width: 30px;
     }
+
+    
+         @include mq(pc) {
+          
+           z-index: 2000;
+        }
     
 }
 
@@ -292,6 +332,7 @@ header h1 {
          @include mq(pc) {
            width: 1920px;
            overflow: hidden;
+           padding-top: 100px;
         }
 
 }
@@ -374,6 +415,12 @@ h2 span {
         @include mq(tab) {
         font-size: 30px;
         }
+
+        
+             @include mq(pc) {
+              
+               font-size: 35px;
+            }
     }
 
     
@@ -409,18 +456,33 @@ h2 span {
             
             height: auto;
         }
+
+        
+             
     }
 
     #concept-title {
         @include mq(tab) {
             font-size: 25px;
         }
+
+        
+             @include mq(pc) {
+              
+               font-size: 40px;
+            }
     }
 
     #concept-text {
         @include mq(tab) {
             font-size: 16px;
         }
+
+        
+             @include mq(pc) {
+                font-size: 24px;
+               
+            }
     }
 
     br:not(#not) {
@@ -430,6 +492,9 @@ h2 span {
     }
 }
 
+#choco1 {
+    width: 100vh;
+}
 
 
 
@@ -439,6 +504,11 @@ h2 span {
 #HISTORY {
     position: relative;
     
+    
+         @include mq(pc) {
+          
+           
+        }
    
 }
 
@@ -446,7 +516,7 @@ h2 span {
     // margin: 20px 20px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    justify-content: start;
     margin-bottom: 20px;
 }
 
@@ -456,6 +526,14 @@ h2 span {
     @include mq(tab) {
         width: 559px;
     }
+
+    
+         @include mq(pc) {
+          position: absolute;
+          top: 30%;
+          left: 10%;
+           
+        }
 }
 
 #history-text-wrapper {
@@ -468,6 +546,14 @@ h2 span {
     @include mq(tab) {
         width: 668px;
     }
+
+    
+         @include mq(pc) {
+          
+           position: absolute;
+           top: 800%;
+           right: 7%;
+        }
 }
 
 .history-text1 {
@@ -476,9 +562,18 @@ h2 span {
     text-align: center;
     
     @include mq(tab) {
-        font-size: 20px;
-     
+        font-size: 14px;
+        
+        
     }
+    
+    
+         @include mq(pc) {
+          font-size: 20px;
+          width: 600px;
+           
+        }
+
 }
 
 #history-text2 {
@@ -494,6 +589,16 @@ h2 span {
             display: none;
         }
     }
+
+    
+         @include mq(pc) {
+        //    position: absolute;
+        //    top: 50%;
+        //    right: 10%;
+           font-size: 18px;
+        //    margin-left: 30px;
+           width: 700px;
+        }
     
 }
 
@@ -514,6 +619,14 @@ h2 span {
         margin-left: auto;
         letter-spacing: 2px;
     }
+
+    
+         @include mq(pc) {
+          position: absolute;
+          top: 4000%;
+          left: 28%;
+           
+        }
 
     br {
         @include mq(tab) {
@@ -540,6 +653,15 @@ h2 span {
         margin-left: 20%;
     }
 
+    
+         @include mq(pc) {
+          
+           position: absolute;
+           top: 2200%;
+           left: 0%;
+           
+        }
+
     p {
         writing-mode: vertical-rl;
         margin: 0 15px;
@@ -556,6 +678,12 @@ h2 span {
             margin-top: 100px;
 
         }
+
+        
+             @include mq(pc) {
+              
+               font-size: 48px;
+            }
     }
 
     :first-child {
@@ -567,15 +695,29 @@ h2 span {
 
 #side-face {
     position: absolute;
-    top: 50%;
-    right: 0;
-    width: 400px;
-
+    top: 65%;
+    right: -80px;
+    width: 500px;
+    
     @include mq(tab) {
         width: 837px;
-        top: 36%;
-       
+        top: 150%;
+        right: 0;
     }
+
+    
+         @include mq(pc) {
+           width: 1100px;
+           top: 2580%;
+        }
+}
+
+#blur1 {
+    position: absolute;
+    width: 1200px;
+    top: 50%;
+    left: -10%;
+    z-index: -10000;
 }
 
 //product
@@ -589,6 +731,12 @@ h2 span {
 
       
     }
+
+    
+         @include mq(pc) {
+          margin-top: 2000px;
+           height: 1000px;
+        }
 
   
     
@@ -657,6 +805,12 @@ h2 span {
            top: 30%;
            left: 15%;
         }
+
+        
+             @include mq(pc) {
+               left: 30%;
+               top: 35%;
+            }
 }
 
 #choco-product {
@@ -673,6 +827,13 @@ h2 span {
          top: 60%;
          left: 44%; 
         }
+
+        
+             @include mq(pc) {
+              
+               top: 65%;
+               
+            }
 }
 
 #blur {
@@ -681,6 +842,13 @@ h2 span {
     z-index: 2;
     top: 10%;
     left:0%;
+
+    
+         @include mq(pc) {
+          top: 15%;
+          left: 20%;
+         width: 1122px;  
+        }
 }
 
 #contents {
@@ -695,15 +863,18 @@ h2 span {
     
          @include mq(tab) {
             width: 150px;
-            border-radius: 20px;
+            border-radius: 15px;
             font-size: 12px;
             margin-top: -20px;
            margin-left: 2px;
-       
-
-          
            
         }
+
+        
+             @include mq(pc) {
+              margin-left: 0;
+               
+            }
 }
 
 #prace {
@@ -720,7 +891,7 @@ h2 span {
             width: 150px;
             font-size: 12px;
             margin-top: -15px;
-          
+            border-radius: 15px;
            
         }
 }
@@ -768,6 +939,12 @@ h2 span {
         color: #2A231F;
         text-align: center;
         line-height: 2;
+
+        
+             @include mq(pc) {
+              
+               margin-top: 10px;
+            }
     }
 
 
@@ -785,10 +962,13 @@ h2 span {
             margin-top: -90px;
             margin-bottom: 80px;
             
-           
-          
-           
         }
+
+        
+             @include mq(pc) {
+                font-size: 20px;
+               
+            }
 }
 
 #lineup-wrapper {
@@ -803,6 +983,14 @@ h2 span {
           
            
         }
+
+        
+             @include mq(pc) {
+              width: 800px;
+              justify-content: space-between;
+                align-items: center;
+               
+            }
 }
 
 .top-items {
@@ -811,13 +999,7 @@ h2 span {
 
     
      
-          @include mq(tab) {
-        
-       
-            
-           
-            
-         }
+         
 }
 
 .bottom-items {
@@ -841,10 +1023,9 @@ h2 span {
         margin: 0 auto;
 
         
-             @include mq(tab) {
-           
-              
-               
+             @include mq(pc) {
+              width: 200px;
+               align-items: center;
             }
     }
 }
@@ -864,7 +1045,11 @@ h2 span {
         margin: 0 auto;
 
         
-          
+        
+             @include mq(pc) {
+              width: 200px
+               
+            }
     }
 }
 
@@ -885,6 +1070,12 @@ h2 span {
 .prace-spacing {
     margin-left: 40px;
     font-size: 10px;
+
+    
+         @include mq(pc) {
+          
+           font-size: 16px;
+        }
 }
 
 
@@ -895,6 +1086,12 @@ h2 span {
     // width: 164px;
     margin: 0 auto;
 
+    
+         @include mq(pc) {
+         
+            margin-left: 20%;
+           
+        }
 
 }
 
@@ -902,6 +1099,12 @@ h2 span {
     // width: 194px;
     margin: 0 auto;
     margin-top: 8px;
+
+    
+         @include mq(pc) {
+          
+         margin-right: 20%;  
+        }
 }
 
 #gift-cap {
@@ -917,6 +1120,12 @@ h2 span {
           
            
         }
+
+        
+             @include mq(pc) {
+              
+              
+            }
     
 }
 
@@ -1268,6 +1477,14 @@ iframe {
             margin-left: 20px;
            
         }
+
+        
+             @include mq(pc) {
+              position: absolute;
+              left: 10%;
+             width: 50%;  
+             height: 500px;
+            }
 }
 
 #ACCESS {
@@ -1278,6 +1495,12 @@ iframe {
           
            
         }
+
+        
+             @include mq(pc) {
+              padding-bottom: 1000px;
+               
+            }
 
     #sibuya-honten {
         width: 130px;
@@ -1298,6 +1521,16 @@ iframe {
               
                
             }
+
+            
+                 @include mq(pc) {
+                  font-size: 20px;
+                  width: 128px;
+                  line-height: 52px;
+                  top: 30%;
+                  left: 65%;
+                   
+                }
     }
 
     p {
@@ -1326,6 +1559,12 @@ iframe {
               
                
             }
+
+            
+                 @include mq(pc) {
+                  left: 67%;
+                   top: 40%;
+                }
     }
 }
 
@@ -1390,6 +1629,13 @@ iframe {
         section {
             width: 298px;
             margin: 0 auto;
+
+
+            
+                 @include mq(pc) {
+                  
+                   
+                }
 
             form {
 
