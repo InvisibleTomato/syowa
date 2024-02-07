@@ -1,33 +1,33 @@
 //ローディング画面
-const loadingScreen = document.getElementById("loading-screen");
-const loadingText = document.getElementById("loading-text");
+// const loadingScreen = document.getElementById("loading-screen");
+// const loadingText = document.getElementById("loading-text");
 
-document.addEventListener("DOMContentLoaded", () => {
+// document.addEventListener("DOMContentLoaded", () => {
 
-   loadingText.style.opacity = "1";
-   loadingScreen.style.opacity = "1";
+//    loadingText.style.opacity = "1";
+//    loadingScreen.style.opacity = "1";
 
-    const myPromise = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(loadingText.style.opacity = "0");
-        }, 5000); // 5秒待機
-    });
+//     const myPromise = new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve(loadingText.style.opacity = "0");
+//         }, 5000); // 5秒待機
+//     });
 
-    // Promiseの使用例
-    myPromise.then((result) => {
-        // 成功時の処理
-        setTimeout(() => {
-            loadingScreen.style.opacity = "0";
-        }, 4000); 
+//     // Promiseの使用例
+//     myPromise.then((result) => {
+//         // 成功時の処理
+//         setTimeout(() => {
+//             loadingScreen.style.opacity = "0";
+//         }, 5000); 
 
-        setTimeout(() => {
-            loadingScreen.style.display = "none";
-        }, 9000); 
-    }).catch((error) => {
-        // 失敗時の処理
-        console.error("エラー:", error);
-    });
-});
+//         setTimeout(() => {
+//             loadingScreen.style.display = "none";
+//         }, 9000); 
+//     }).catch((error) => {
+//         // 失敗時の処理
+//         console.error("エラー:", error);
+//     });
+// });
 
 
     
@@ -68,6 +68,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 //top-mainのスライダー
+
+
 
 const slideImages = document.querySelectorAll('#top-slider .slide-image');
 let currentSlideIndex = 0;
