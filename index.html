@@ -19,6 +19,12 @@
           h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
         })(document);
       </script>
+
+
+      
+
+
+
 </head>
 <body>
     <div id="coverlayer">
@@ -54,9 +60,7 @@
     </header>
 
     <!-- ローディング時のアニメーション -->
-    <div id="loading-screen">
-        <div id="loading-text">ありがとう<span id="loding-spacer">を伝えたいあの人に・・・</div>
-    </div>
+    <!--  -->
 
     <!-- top main -->
     <div class="top-main">
@@ -66,8 +70,8 @@
 
         <!-- top-mainスライダー -->
         <div id="top-slider">
-            <img decoding="async" class="slide-image" src="./images/top-main.png" width="100%" height="631px">
-            <img decoding="async" class="slide-image" src="./images/top-main-2.png" width="100%" height="631px">
+            <img decoding="async" id="top1" class="slide-image" src="./images/top/top-sp-1.png"  width="100%" >
+            <img decoding="async" id="top2" class="slide-image" src="./images/top/top-sp-2.png" width="100%" >
         </div>
         
 
@@ -81,12 +85,12 @@
                 <img src="./images/decoration_right.svg" alt="">
             </div>
 
-            <p>SYOWA オリジナルチョコレート</p>
+            <p id="concept-title">SYOWA オリジナルチョコレート</p>
             <span></span>
-            <p>
+            <p id="concept-text">
                 「どこか懐かしい」をコンセプトに<br>
-                 大切な人へ想いを伝えるための<br>
-                 プレゼントにぴったりなチョコレートを<br>
+                 大切な人へ想いを伝えるための<br id="not">
+                 プレゼントにぴったりなチョコレートを<br >
                  作りました。
             </p>
             <img src="./images/iphone_choco.png" alt="">
@@ -257,7 +261,7 @@
                 </div>
             </div>
 
-            <p id="detail">詳細はこちら＞</p>
+            <p id="detail">詳細はこちら >></p>
         </div>
 
         <div id="TOPICS" class="scr-target">
@@ -420,6 +424,79 @@
     </span>
 
 
+
+
+
+
+    <!-- 画像の切り替え -->
+     <!-- 768px以上の時にtb用画像に切り替え -->
+
+     <script>
+        // 画面の幅が1025px以上の場合に実行される関数
+        function changeImageSrc() {
+           const screenWidth = window.innerWidth;
+           if (screenWidth >= 768) {
+               // 画面幅が1025px以上の場合、画像のsrcを変更する
+               document.getElementById('top1').src = "./images/top/top-tb-1.png";
+           }
+       }
+
+       // 初期化：画面の幅が変更されたときにchangeImageSrc関数を呼び出す
+       changeImageSrc();
+       window.addEventListener('resize', changeImageSrc);
+   </script>
+
+<script>
+    // 画面の幅が1025px以上の場合に実行される関数
+    function changeImageSrc() {
+       const screenWidth = window.innerWidth;
+       if (screenWidth >= 768) {
+           // 画面幅が1025px以上の場合、画像のsrcを変更する
+           document.getElementById('top2').src = "./images/top/top-tb-2.png";
+       }
+   }
+
+   // 初期化：画面の幅が変更されたときにchangeImageSrc関数を呼び出す
+   changeImageSrc();
+   window.addEventListener('resize', changeImageSrc);
+</script>
+
+
+
+
+    <!-- 1025px以上の時にpc用画像に切り替え -->
+
+    <script>
+        // 画面の幅が1025px以上の場合に実行される関数
+        function changeImageSrc() {
+            const screenWidth = window.innerWidth;
+            if (screenWidth >= 1025) {
+                // 画面幅が1025px以上の場合、画像のsrcを変更する
+                document.getElementById('top1').src = "./images/top/top-pc-1.png";
+            }
+        }
+
+        // 初期化：画面の幅が変更されたときにchangeImageSrc関数を呼び出す
+        changeImageSrc();
+        window.addEventListener('resize', changeImageSrc);
+    </script>
+    
+    <script>
+         // 画面の幅が1025px以上の場合に実行される関数
+         function changeImageSrc() {
+            const screenWidth = window.innerWidth;
+            if (screenWidth >= 1025) {
+                // 画面幅が1025px以上の場合、画像のsrcを変更する
+                document.getElementById('top2').src = "./images/top/top-pc-2.png";
+            }
+        }
+
+        // 初期化：画面の幅が変更されたときにchangeImageSrc関数を呼び出す
+        changeImageSrc();
+        window.addEventListener('resize', changeImageSrc);
+    </script>
+
+   
 
     <script src="./script.js"></script>
 </body>
