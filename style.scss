@@ -505,6 +505,11 @@ h2 span {
     position: relative;
     
     
+         @include mq(sp) {
+          
+           overflow: hidden;
+        }
+    
          @include mq(pc) {
           
            
@@ -549,10 +554,10 @@ h2 span {
 
     
          @include mq(pc) {
-          
+          max-width: 45%;
            position: absolute;
            top: 800%;
-           right: 7%;
+           right: 4%;
         }
 }
 
@@ -597,7 +602,7 @@ h2 span {
         //    right: 10%;
            font-size: 18px;
         //    margin-left: 30px;
-           width: 700px;
+           mx-width: 50%;
         }
     
 }
@@ -655,7 +660,7 @@ h2 span {
 
     
          @include mq(pc) {
-          
+          height: 900px;
            position: absolute;
            top: 2200%;
            left: 0%;
@@ -698,17 +703,21 @@ h2 span {
     top: 65%;
     right: -80px;
     width: 500px;
+
+    
+         
     
     @include mq(tab) {
         width: 837px;
-        top: 150%;
-        right: 0;
+        top: 60%;
+        left: 0;
     }
 
     
          @include mq(pc) {
-           width: 1100px;
+           max-width: 100vw;
            top: 2580%;
+           left: 35%;
         }
 }
 
