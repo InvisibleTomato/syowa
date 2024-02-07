@@ -9,6 +9,9 @@ $breakpoint: (
   @media #{map-get($breakpoint, $bp)} {
    @content;
   }
+
+  
+    
 }
 
 // * {
@@ -17,7 +20,7 @@ $breakpoint: (
 
 body {
     font-family: 'Times New Roman', Times, serif;
-    padding-top: 95px;
+    // padding-top: 95px;
 }
 
 a {
@@ -61,6 +64,10 @@ img {
     opacity: 0;
     writing-mode: vertical-rl;
     transition: 5s;
+
+    @include mq(tab) {
+        font-size: 24px;
+    }
 }
 
 #loding-spacer {
@@ -85,7 +92,19 @@ img {
     width: 40px; /* クリックエリアの横幅*/
     height: 20px; /* クリックエリアの高さ*/
     cursor: pointer;
+
+    @include mq(tab){
+        width: 70px;
+        height: 50px;
+        right: 60px;
+        }
   }
+
+  
+       @include mq(pc) {
+        
+         display: none;
+      }
   
   /* 3本線の1本ごとに共通するスタイルを指定 ---------------------- */
   .btnHamburger .line {
@@ -97,6 +116,11 @@ img {
     width: 40px; /* 横幅 */
     height: 2px; /* 1本辺りの高さ */
     background: #676262; /* 線の色 */
+
+    @include mq(tab){
+        width: 70px;
+        height: 3px;
+        }
     
     /* 適用するプロパティ、変化する時間、変化する速度 */
     /* -webkit-transition: all 0.3s ease-out; */
@@ -105,8 +129,18 @@ img {
   
   /* 3本線の各線の位置を指定 ---------------------- */
   .btnHamburger .line_01 { top: 0px; }
-  .btnHamburger .line_02 { top: 8px; }
-  .btnHamburger .line_03 { top: 16px; }
+  .btnHamburger .line_02 { top: 8px; 
+
+    @include mq(tab){
+        top: 23px;
+        }
+}
+  .btnHamburger .line_03 { top: 16px; 
+
+    @include mq(tab){
+        top: 46px;
+        }
+}
 
 
 /* ハンバーガーメニュークリック後 */
@@ -144,7 +178,16 @@ nav {
      ul li a {
         color: #554A45;
         
+        @include mq(tab) {
+            font-size: 25px;
+        }
     }
+
+    @include mq(tab) {
+        font-size: 25px;
+        margin-top: 200px;
+    }
+    
 }
 
 #coverlayer {
@@ -183,6 +226,11 @@ nav.is-active  {
     position: absolute;
     top: 120%;
     left: 20%;
+
+    @include mq(tab) {
+        top: 110%;
+        left: 35%;
+    }
 }
 
 #coverlayer.is-active {
@@ -221,7 +269,8 @@ header h1 {
     width: 21px;
 
     @include mq(tab) {
-        left: 50%;
+        left: 48%;
+        width: 30px;
     }
     
 }
@@ -232,7 +281,18 @@ header h1 {
     position: relative;
     z-index: -10;
     height: 631px;
-    max-width: 100vw;
+    max-width: 100%;
+
+    @include mq(tab) {
+        height: 100vh;
+
+    }
+
+    
+         @include mq(pc) {
+           width: 1920px;
+           overflow: hidden;
+        }
 
 }
 
@@ -245,6 +305,12 @@ h2 {
     left: 48%;
     z-index: 100;
     text-shadow:0 0 5px #FFF;
+
+
+    @include mq(tab) {
+        margin-top: 50px;
+        font-size: 30px;
+    }
 }
 
 h2 span {
@@ -258,6 +324,10 @@ h2 span {
     width: 100%;
     height: 631px;
     overflow: hidden;
+
+    @include mq(tab) {
+        height: 100vh;
+    }
 }
 .slide-image {
     position: absolute;
@@ -267,6 +337,10 @@ h2 span {
     height: auto;
     opacity: 0;
     transition: opacity 2s ease; /* 0.5秒でフェードイン・アウト */
+
+    @include mq(tab) {
+        
+    }
 }
 
 
@@ -278,8 +352,16 @@ h2 span {
 .section-title {
     display: flex;
     justify-content: center;
-    margin: 50px auto;
+    margin-top: 100px;
+    margin-bottom: 40px;
     align-items: center;
+
+    
+         @include mq(tab) {
+            margin: 100px auto ;
+          
+           
+        }
     img {
         width:50px ;
         padding: 0 5px;
@@ -289,7 +371,12 @@ h2 span {
         font-size: 21px;
         color:#554A45 ;
 
+        @include mq(tab) {
+        font-size: 30px;
+        }
     }
+
+    
     
 }
 
@@ -300,6 +387,10 @@ h2 span {
         font-size: 14px;
         color: #2A231F;
         line-height: 2.0;
+
+        @include mq(tab) {
+        
+        }
     }
 
     span {
@@ -312,8 +403,36 @@ h2 span {
 
     img {
         margin: 20px 0;
+
+        @include mq(tab) {
+            margin: 150px 0;
+            
+            height: auto;
+        }
+    }
+
+    #concept-title {
+        @include mq(tab) {
+            font-size: 25px;
+        }
+    }
+
+    #concept-text {
+        @include mq(tab) {
+            font-size: 16px;
+        }
+    }
+
+    br:not(#not) {
+        @include mq(tab) {
+            display: none;
+        }
     }
 }
+
+
+
+
 
 // HISTORY
 
@@ -334,6 +453,9 @@ h2 span {
 #history_img {
     width: 347px;
     
+    @include mq(tab) {
+        width: 559px;
+    }
 }
 
 #history-text-wrapper {
@@ -342,6 +464,10 @@ h2 span {
     justify-content: start;
     margin: 0 auto;
     width: 360px;
+
+    @include mq(tab) {
+        width: 668px;
+    }
 }
 
 .history-text1 {
@@ -349,6 +475,10 @@ h2 span {
     line-height: 2.5;
     text-align: center;
     
+    @include mq(tab) {
+        font-size: 20px;
+     
+    }
 }
 
 #history-text2 {
@@ -356,6 +486,14 @@ h2 span {
     text-align: start;
     font-size: 11px;
     line-height: 2;
+
+    @include mq(tab) {
+        font-size: 16px;
+
+        br {
+            display: none;
+        }
+    }
     
 }
 
@@ -363,20 +501,45 @@ h2 span {
     font-size: 13px;
     text-align: center;
     color: #2a131f;
-    margin-top: 250px;
-    margin-bottom: 200px;
+    margin-top: 350px;
+    // margin-bottom: 200px;
     line-height: 2.0;
+
+    @include mq(tab) {
+        font-size: 16px;
+        margin-top: 520px;
+        margin-bottom: 100px;
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+        letter-spacing: 2px;
+    }
+
+    br {
+        @include mq(tab) {
+            display: none;
+            
+        }
+    }
 }
 
 #text2-wrapper {
     margin: 0 auto;
     width: 100%;
     margin-bottom: 70px;
+
+    
 }
 
 #copy {
     display: flex;
     margin-left: 15%;
+
+
+    @include mq(tab) {
+        margin-left: 20%;
+    }
+
     p {
         writing-mode: vertical-rl;
         margin: 0 15px;
@@ -386,10 +549,17 @@ h2 span {
         font-style: normal;
         color: #554A45;
         letter-spacing: 0.7em;
+
+        @include mq(tab) {
+            font-size: 22px;
+            
+            margin-top: 100px;
+
+        }
     }
 
     :first-child {
-        margin-top: 130px;
+        margin-top: 200px;
     }
     
     
@@ -400,12 +570,27 @@ h2 span {
     top: 50%;
     right: 0;
     width: 400px;
+
+    @include mq(tab) {
+        width: 837px;
+        top: 36%;
+       
+    }
 }
 
 //product
 
 #PRODUCT {
     height: 800px;
+
+    @include mq(tab){
+        height: 700px;
+        margin-bottom: 550px;
+
+      
+    }
+
+  
     
 
     p {
@@ -413,6 +598,22 @@ h2 span {
         color:#2a231f ;
         font-size: 14px;
         line-height: 1.3;
+
+        @include mq(tab) {
+            font-size: 14px;
+            width: 600px;
+            margin: -20px auto 0;
+            line-height: 30px;
+            
+           
+            
+        }
+
+        br {
+            @include mq(tab) {
+                display: none;
+            }
+        }
     }
 
     h4 {
@@ -420,12 +621,19 @@ h2 span {
         color: #000;
         text-align: center;
         margin-top: 70px;
+
+        
+             @include mq(tab) {
+                font-size: 22px;
+                letter-spacing: 3px;
+                margin-top: 350px;
+                margin-bottom: 50px;
+               
+            }
     }
     
 
-    @include mq(pc) {
-        
-    }
+    
 }
 
 #product-image-wrapper {
@@ -441,6 +649,14 @@ h2 span {
     z-index: 10;
     top: 10%;
     left: 10%;
+
+
+    
+         @include mq(tab) {
+          width: 364px;
+           top: 30%;
+           left: 15%;
+        }
 }
 
 #choco-product {
@@ -449,6 +665,14 @@ h2 span {
     z-index: 10;
     top: 30%;
     left: 15%;
+
+    
+         @include mq(tab) {
+          
+         width: 458px; 
+         top: 60%;
+         left: 44%; 
+        }
 }
 
 #blur {
@@ -467,6 +691,19 @@ h2 span {
     font-size:12px ;
     text-align: center;
     line-height: 2.8;
+
+    
+         @include mq(tab) {
+            width: 150px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-top: -20px;
+           margin-left: 2px;
+       
+
+          
+           
+        }
 }
 
 #prace {
@@ -477,6 +714,15 @@ h2 span {
     font-size:12px ;
     text-align: center;
     line-height: 2.8;
+
+    
+         @include mq(tab) {
+            width: 150px;
+            font-size: 12px;
+            margin-top: -15px;
+          
+           
+        }
 }
 
 #choco-desc-wrapper {
@@ -494,14 +740,28 @@ h2 span {
     margin-top: 20px;
     p {
         margin-left: 20px;
+
+        
+             @include mq(tab) {
+               margin-top: 50px;
+              
+               
+            }
     }
 
+
+    
+        
     
 }
 
 //LINEUP 
 
+
+
 #LINEUP {
+
+ 
 
     p {
         
@@ -509,24 +769,68 @@ h2 span {
         text-align: center;
         line-height: 2;
     }
+
+
+  
+
 }
 
 #lineup-title {
     font-size: 14px;
+
+    
+         @include mq(tab) {
+            font-size: 16px;
+            letter-spacing: 2px;
+            margin-top: -90px;
+            margin-bottom: 80px;
+            
+           
+          
+           
+        }
 }
 
 #lineup-wrapper {
     padding: 15px;
+
+    
+         @include mq(tab) {
+            display: flex;
+            position: relative;
+            margin: 0 auto;
+            width: 720px;
+          
+           
+        }
 }
 
 .top-items {
     display: flex;
     justify-content: space-around;
+
+    
+     
+          @include mq(tab) {
+        
+       
+            
+           
+            
+         }
 }
 
 .bottom-items {
     display: flex;
     justify-content: space-around;
+
+    @include mq(tab) {
+     
+        
+     
+       
+        
+     }
 }
 
 .left-items {
@@ -535,15 +839,32 @@ h2 span {
         width: 150px;
         display: block;
         margin: 0 auto;
+
+        
+             @include mq(tab) {
+           
+              
+               
+            }
     }
 }
 
 .right-items {
 
+    
+         @include mq(tab) {
+        
+           
+        }
+
+
     img {
         width: 150px;
         display: block;
         margin: 0 auto;
+
+        
+          
     }
 }
 
@@ -557,6 +878,8 @@ h2 span {
 
 .lineup-title {
     font-size: 12px;
+
+
 }
 
 .prace-spacing {
@@ -564,11 +887,15 @@ h2 span {
     font-size: 10px;
 }
 
+
+
 //GIFT
 
 .gift-left {
     // width: 164px;
     margin: 0 auto;
+
+
 }
 
 .gift-right {
@@ -581,6 +908,15 @@ h2 span {
     text-align: center;
     font-size: 10px;
     line-height: 2.5;
+
+    
+         @include mq(tab) {
+            font-size: 16px;
+            margin-top: -40px;
+            margin-bottom: 20px;
+          
+           
+        }
     
 }
 
@@ -588,20 +924,51 @@ h2 span {
     width: 164px;
     display: block;
     margin: 0 auto;
+
+    
+         @include mq(tab) {
+            width: 320px;
+          
+           
+        }
 }
 
 #gift-red {
     width: 194px;
     display: block;
     margin: 0 auto;
+
+    
+         @include mq(tab) {
+            width: 370px;
+          
+           
+        }
 }
 
 .gift-item-title {
     width: 164px;
     margin: 0 auto;
+
+    
+         @include mq(tab) {
+            width: 250px;
+          
+           
+        }
+
     .gift-title {
         font-size:10px;
         text-align: center;
+
+        
+             @include mq(tab) {
+                font-size: 18px;
+                margin-bottom: -10px;
+         
+              
+               
+            }
     }
 }
 
@@ -616,6 +983,14 @@ h2 span {
 .gift-prace-spacing {
     font-size: 10px;
     margin-left: 60px;
+
+    
+         @include mq(tab) {
+            font-size: 16px;
+            margin-top: 2px;
+          
+           
+        }
 }
 
 #detail {
@@ -624,7 +999,16 @@ h2 span {
     color: #554A45;
     margin-top: 50px;
     margin-bottom: 30px;
+
+    
+         @include mq(tab) {
+            font-size: 18px;
+
+          
+           
+        }
 }
+
 
 // topics
 
@@ -636,6 +1020,16 @@ h2 span {
     text-align: center;
     font-size: 10px;
     margin-top: -20px;
+
+    
+         @include mq(tab) {
+            font-size: 18px;
+            margin-top: -40px;
+            margin-bottom: 80px;
+        
+          
+           
+        }
 }
 
 //topicsスライダー
@@ -648,6 +1042,13 @@ h2 span {
   
   overflow: hidden; /* はみ出したスライドを隠す */
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .5);
+
+  
+       @include mq(tab) {
+        
+         width: 400px;
+         height: 524px;
+      }
 }
 /*  ↓ スライド（コンテンツ） */
 .slide { /*スライド全体 */
@@ -656,6 +1057,9 @@ h2 span {
   display: flex;
   transition: all 0.3s;
   position: relative;
+
+  
+    
 }
 .slide div { /* スライド */
   width: 33.33%;
@@ -670,6 +1074,12 @@ h2 span {
     width: 300px;
     height: auto;
     display: block;
+
+    
+         @include mq(tab) {
+          
+           width: 400px;
+        }
    }
 
   
@@ -712,6 +1122,12 @@ h2 span {
   cursor: pointer;
   color: #554A45;
   font-size: 23px;
+
+  
+       @include mq(tab) {
+        font-size: 50px;
+        right: 10%;
+      }
 }
 .prev {
   position: absolute;
@@ -723,6 +1139,11 @@ h2 span {
   cursor: pointer;
   color: #554a45;
   font-size: 23px;
+
+  @include mq(tab) {
+    font-size: 50px;
+     left: 10%;
+  }
 }
 /* ↓ インジケーター */
 .indicator {
@@ -756,6 +1177,11 @@ h2 span {
     left: 5%;
     font-size: 10px;
 
+    
+         @include mq(tab) {
+          
+           top: 90%;
+        }
 }
 
 .slider-text {
@@ -765,13 +1191,14 @@ h2 span {
     position: absolute;
     top: 90%;
     left: 17%;
+
+    
+         @include mq(tab) {
+          
+           top: 92.5%;
+           left: 26%;
+        }
 }
-
-
-
-
-
-
 
 
 
@@ -785,11 +1212,32 @@ h2 span {
     border-radius: 20px;
     font-size: 10px;
 
+    
+         @include mq(tab) {
+            width: 200px;
+            height: 60px;
+            font-size: 25px;
+            line-height: 58px;
+            border-radius: 30px;
+            margin-top: 100px;
+          
+           
+        }
+
     a {
         color:#fff ;
         display: block;
         cursor: pointer;
         font-size: 12px;
+
+        
+             @include mq(tab) {
+                font-size: 20px;
+                margin-bottom: -100px;
+               
+              
+               
+            }
     }
 }
 
@@ -811,9 +1259,25 @@ iframe {
     width:95% ;
     height: 395px;
     margin: 0 auto;
+
+    
+         @include mq(tab) {
+        
+            display: inline;
+            width: 50%;
+            margin-left: 20px;
+           
+        }
 }
 
 #ACCESS {
+
+    
+         @include mq(tab) {
+            position: relative;
+          
+           
+        }
 
     #sibuya-honten {
         width: 130px;
@@ -824,6 +1288,16 @@ iframe {
         font-size: 16px;
         margin-top: 20px;
         margin-left: 40px;
+
+        
+             @include mq(tab) {
+                font-size: 18px;
+                position: absolute;
+                top: 40%;
+                left: 55%;
+              
+               
+            }
     }
 
     p {
@@ -843,6 +1317,15 @@ iframe {
     #access-text-wrapper {
         margin: 30px auto 0 auto;
         width: 330px;
+
+        
+             @include mq(tab) {
+                position: absolute;
+                top: 55%;
+                left: 60%;
+              
+               
+            }
     }
 }
 
@@ -855,7 +1338,17 @@ iframe {
         color: #554a45;
         text-align: center;
         line-height: 1.5;
-        margin-top: -30px;
+       
+
+        
+             @include mq(tab) {
+                font-size: 18px;
+                letter-spacing: 1.5px;
+                line-height: 2;
+                margin-bottom: 100px;
+              
+               
+            }
     }
 
     #contact-icon  {
@@ -866,7 +1359,14 @@ iframe {
 
         a img {
             width: 40px;
+
+            
+        
         }
+
+        
+          
+        
 
     }
 
@@ -877,6 +1377,14 @@ iframe {
             font-size: 16px;
             color: #554a45;
             margin-bottom: 30px;
+
+            
+                 @include mq(tab) {
+                    letter-spacing: 2px;
+                    margin-bottom: 70px;
+                  
+                   
+                }
         }
 
         section {
@@ -892,6 +1400,14 @@ iframe {
                         margin-top: 20px;
                         font-size: 10px;
                         color: #554a45;
+
+                        
+                             @include mq(tab) {
+                                font-size: 18px;
+                                margin-left: -120px;
+                              
+                               
+                            }
                     }
 
                     input {
@@ -901,6 +1417,14 @@ iframe {
                         
                         border: 1px solid #85776b;
                         background: #d2cdc8;
+
+                        
+                             @include mq(tab) {
+                                width: 600px;
+                                margin-left: -140px;
+                              
+                               
+                            }
                     }
 
                     textarea {
@@ -916,6 +1440,14 @@ iframe {
                             font-size: 10px;
                             padding: 5px 0 0 5px;
                         }
+
+                        
+                             @include mq(tab) {
+                                width: 600px;
+                                margin-left: -140px;
+                              
+                               
+                            }
                     }
                 }
 
@@ -927,6 +1459,18 @@ iframe {
                     border: 1px solid #85776b;
                     background: #d2cdc8;
                     margin: 50px auto 40px auto;
+
+                    
+                         @include mq(tab) {
+                            margin: 120px auto;
+                            font-size: 25px;
+                            width: 170px;
+                            height: 60px;
+                            border-radius: 30px;
+                            letter-spacing: 2px;
+                          
+                           
+                        }
                 }
 
             }
@@ -943,7 +1487,7 @@ iframe {
 // footer 
 
 footer {
-    height:106px ;
+    height:120px ;
     background: #D2CDC8;
     color: #554A45;
 }
