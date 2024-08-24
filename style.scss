@@ -1,1253 +1,1030 @@
 // ブレークポイントの定義
 $breakpoint: (
-  sp: 'screen and (max-width: 767px)',
-  tab: 'screen and (min-width: 768px)',
-  pc: 'screen and (min-width: 1025px)'
+  sp: "screen and (max-width: 767px)",
+  tab: "screen and (min-width: 768px)",
+  pc: "screen and (min-width: 1025px)",
 );
 
 @mixin mq($bp) {
   @media #{map-get($breakpoint, $bp)} {
-   @content;
+    @content;
   }
-
-  
-    
 }
 
-// * {
-//     outline: 1px solid magenta;
-// }
+* {
+  outline: 1px solid magenta;
+}
 
 body {
-    font-family: 'Times New Roman', Times, serif;
-    // padding-top: 95px;
+  font-family: "Times New Roman", Times, serif;
+  // padding-top: 95px;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 img {
-    width: 100%;
+  width: 100%;
 }
-
-
-
-
-
-
 
 // ローディング画面
 #loading-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 1;
-    transition:4s;
-    z-index: 15000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: 4s;
+  z-index: 15000;
 }
 
 #loading-screen.fade-out {
-    opacity: 0;
+  opacity: 0;
 }
 
 #loading-text {
-    color: black;
-    font-size: 20px;
-    letter-spacing: 5px;
-    opacity: 0;
-    writing-mode: vertical-rl;
-    transition: 5s;
+  color: black;
+  font-size: 20px;
+  letter-spacing: 5px;
+  opacity: 0;
+  writing-mode: vertical-rl;
+  transition: 5s;
 
-    @include mq(tab) {
-        font-size: 24px;
-    }
+  @include mq(tab) {
+    font-size: 24px;
+  }
 }
 
 #loding-spacer {
-    margin: 20px;
+  margin: 20px;
 }
-
-
-
-
-
-
 
 /* ハンバーガー */
 
 /* ハンバーガーメニュークリック前 */
 /* クリックエリアと位置を指定 ---------------------- */
 .btnHamburger {
-    position: fixed;
-    z-index: 10000;
-    top: 40px;
-    right: 40px;
-    width: 40px; /* クリックエリアの横幅*/
-    height: 20px; /* クリックエリアの高さ*/
-    cursor: pointer;
+  position: fixed;
+  z-index: 10000;
+  top: 40px;
+  right: 40px;
+  width: 40px; /* クリックエリアの横幅*/
+  height: 20px; /* クリックエリアの高さ*/
+  cursor: pointer;
 
-    @include mq(tab){
-        width: 70px;
-        height: 50px;
-        right: 60px;
-        }
-
-        @include mq(pc) {
-        
-            display: none;
-         }
+  @include mq(tab) {
+    width: 70px;
+    height: 50px;
+    right: 60px;
   }
 
-  
-       
-  
-  /* 3本線の1本ごとに共通するスタイルを指定 ---------------------- */
-  .btnHamburger .line {
-    position: absolute;
-    
-    top: 0;
-    left: 0;
-    display: block;
-    width: 40px; /* 横幅 */
-    height: 2px; /* 1本辺りの高さ */
-    background: #676262; /* 線の色 */
-
-    @include mq(tab){
-        width: 70px;
-        height: 3px;
-        }
-    
-    /* 適用するプロパティ、変化する時間、変化する速度 */
-    /* -webkit-transition: all 0.3s ease-out; */
-    transition: 0.3s;
-   }
-  
-  /* 3本線の各線の位置を指定 ---------------------- */
-  .btnHamburger .line_01 { top: 0px; }
-  .btnHamburger .line_02 { top: 8px; 
-
-    @include mq(tab){
-        top: 23px;
-        }
-}
-  .btnHamburger .line_03 { top: 16px; 
-
-    @include mq(tab){
-        top: 46px;
-        }
+  @include mq(pc) {
+    display: none;
+  }
 }
 
+/* 3本線の1本ごとに共通するスタイルを指定 ---------------------- */
+.btnHamburger .line {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  display: block;
+  width: 40px; /* 横幅 */
+  height: 2px; /* 1本辺りの高さ */
+  background: #676262; /* 線の色 */
+
+  @include mq(tab) {
+    width: 70px;
+    height: 3px;
+  }
+
+  /* 適用するプロパティ、変化する時間、変化する速度 */
+  /* -webkit-transition: all 0.3s ease-out; */
+  transition: 0.3s;
+}
+
+/* 3本線の各線の位置を指定 ---------------------- */
+.btnHamburger .line_01 {
+  top: 0px;
+}
+.btnHamburger .line_02 {
+  top: 8px;
+
+  @include mq(tab) {
+    top: 23px;
+  }
+}
+.btnHamburger .line_03 {
+  top: 16px;
+
+  @include mq(tab) {
+    top: 46px;
+  }
+}
 
 /* ハンバーガーメニュークリック後 */
 .btnHamburger.is-active .line_01 {
-    top: 8px; /* 上から2番目の線の位置に変更 */
-  
-    /* 線を45度回転 */
-    /* -webkit-transform: rotate(45deg); */
-    transform: rotate(45deg);
-  }
-  
-  /* 上から2番目の線のスタイル ---------------------- */
-  .btnHamburger.is-active .line_02 {
-    opacity: 0; /* 不透明度を下げて線を消す */
-  }
-  
-  /* 最下部の線のスタイル ---------------------- */
-  .btnHamburger.is-active .line_03 {
-    top: 8px; /* 上から2番目の線の位置に変更 */
-  
-    /* 線を135度回転 */
-    -webkit-transform: rotate(135deg);
-    transform: rotate(135deg);
-  }
+  top: 8px; /* 上から2番目の線の位置に変更 */
 
-  /* クリック前 */
+  /* 線を45度回転 */
+  /* -webkit-transform: rotate(45deg); */
+  transform: rotate(45deg);
+}
+
+/* 上から2番目の線のスタイル ---------------------- */
+.btnHamburger.is-active .line_02 {
+  opacity: 0; /* 不透明度を下げて線を消す */
+}
+
+/* 最下部の線のスタイル ---------------------- */
+.btnHamburger.is-active .line_03 {
+  top: 8px; /* 上から2番目の線の位置に変更 */
+
+  /* 線を135度回転 */
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+/* クリック前 */
 nav {
-    position: fixed;
-    top: 60px;
-    left: -100%;
-    width: 100%;
-    opacity: 0;
-    transition: 0.5s;
+  position: fixed;
+  top: 60px;
+  left: -100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s;
 
-    ul {
-        
-             @include mq(pc) {
-              display: flex;
-              justify-content: space-around;
-              
-              
-            }
+  ul {
+    @include mq(pc) {
+      display: flex;
+      justify-content: space-around;
     }
-    
-     ul li a {
-        color: #554A45;
-        
-        @include mq(tab) {
-            font-size: 25px;
-        }
+  }
 
-        
-             @include mq(pc) {
-              display: block;
-             font-size: 20px;  
-            }
-    }
+  ul li a {
+    color: #554a45;
 
     @include mq(tab) {
-        font-size: 25px;
-        margin-top: 200px;
+      font-size: 25px;
     }
 
-    
-         @include mq(pc) {
-            opacity: 1;
-            position: fixed;
-            top: 0%;
-            left: 0%;
-            z-index: 1000;
-            line-height: 100px;
-            background: #fff;
-            margin: 0 auto;
-            width: 100%;
-            
-        }
-    
+    @include mq(pc) {
+      display: block;
+      font-size: 20px;
+    }
+  }
+
+  @include mq(tab) {
+    font-size: 25px;
+    margin-top: 200px;
+  }
+
+  @include mq(pc) {
+    opacity: 1;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    z-index: 1000;
+    line-height: 100px;
+    background: #fff;
+    margin: 0 auto;
+    width: 100%;
+  }
 }
 
 #coverlayer {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 1px;
-    opacity: 0;
-    background: #C6B5B0;
-    transition: 0.5s;
-    z-index: 11;
-    
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  opacity: 0;
+  background: #c6b5b0;
+  transition: 0.5s;
+  z-index: 11;
 }
 
 /* クリック後 */
 
-nav.is-active  {
-    left: 0;
-    opacity: 1;
-   color: #554A45;
-   text-align: center;
-   
-   display: block;
- 
-   ul li {
-     padding: 40px 0 ;
-   }
-    
+nav.is-active {
+  left: 0;
+  opacity: 1;
+  color: #554a45;
+  text-align: center;
+
+  display: block;
+
+  ul li {
+    padding: 40px 0;
+  }
 }
 
 .btnHamburger p {
-    font-size: 8px;
-    margin-top: 5px;
-    color: #000;
-    position: absolute;
-    top: 120%;
-    left: 20%;
+  font-size: 8px;
+  margin-top: 5px;
+  color: #000;
+  position: absolute;
+  top: 120%;
+  left: 20%;
 
-    @include mq(tab) {
-        top: 110%;
-        left: 35%;
-    }
+  @include mq(tab) {
+    top: 110%;
+    left: 35%;
+  }
 }
 
 #coverlayer.is-active {
-    width: 100%;
-    opacity: 1;
+  width: 100%;
+  opacity: 1;
 }
 
 //ふわっと表示
 
 .scr-target {
-    opacity: 0;
-    transform: translate3d(0, 30px, 0);
-    
-  }
-  
-  .scr-target.is-active {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-    transition: 2s;
-  }
+  opacity: 0;
+  transform: translate3d(0, 30px, 0);
+}
+
+.scr-target.is-active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: 2s;
+}
 
 //header
 
 header {
-    position: fixed;
-    height: 50px;
-    z-index: 1000;
-
-    
-         
-   
+  position: fixed;
+  height: 50px;
+  z-index: 1000;
 }
 
 header h1 {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    width: 21px;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 21px;
 
-    @include mq(tab) {
-        left: 48%;
-        width: 30px;
-    }
+  @include mq(tab) {
+    left: 48%;
+    width: 30px;
+  }
 
-    
-         @include mq(pc) {
-          
-           z-index: 2000;
-        }
-    
+  @include mq(pc) {
+    z-index: 2000;
+  }
 }
 
 //top-main
 
 .top-main {
-    position: relative;
-    z-index: -10;
-    height: 631px;
-    max-width: 100%;
+  position: relative;
+  z-index: -10;
+  height: 631px;
+  max-width: 100%;
 
-    @include mq(tab) {
-        height: 100vh;
+  @include mq(tab) {
+    height: 100vh;
+  }
 
-    }
-
-    
-         @include mq(pc) {
-           width: 1920px;
-           overflow: hidden;
-           padding-top: 100px;
-        }
-
+  @include mq(pc) {
+    width: 1920px;
+    overflow: hidden;
+    padding-top: 100px;
+  }
 }
 
 h2 {
-    writing-mode: vertical-rl; 
-    font-size: 20px;
-    color: #fff;
-    position: absolute;
-    top: 25%;
-    left: 48%;
-    z-index: 100;
-    text-shadow:0 0 5px #FFF;
+  writing-mode: vertical-rl;
+  font-size: 20px;
+  color: #fff;
+  position: absolute;
+  top: 25%;
+  left: 48%;
+  z-index: 100;
+  text-shadow: 0 0 5px #fff;
 
-
-    @include mq(tab) {
-        margin-top: 50px;
-        font-size: 30px;
-    }
+  @include mq(tab) {
+    margin-top: 50px;
+    font-size: 30px;
+  }
 }
 
 h2 span {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 
 //top-mainのスライダー
 
 #top-slider {
-    position: relative;
-    width: 100%;
-    height: 631px;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 631px;
+  overflow: hidden;
 
-    @include mq(tab) {
-        height: 100vh;
-    }
+  @include mq(tab) {
+    height: 100vh;
+  }
 }
 .slide-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    opacity: 0;
-    transition: opacity 2s ease; /* 0.5秒でフェードイン・アウト */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 2s ease; /* 0.5秒でフェードイン・アウト */
 
-    @include mq(tab) {
-        
-    }
+  @include mq(tab) {
+  }
 }
-
-
-
-
 
 // CONCEPT
 
 .section-title {
-    display: flex;
-    justify-content: center;
-    margin-top: 100px;
-    margin-bottom: 40px;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 40px;
+  align-items: center;
 
-    
-         @include mq(tab) {
-            margin: 100px auto ;
-          
-           
-        }
-    img {
-        width:50px ;
-        padding: 0 5px;
-    }
-    
-    h3 {
-        font-size: 21px;
-        color:#554A45 ;
+  @include mq(tab) {
+    margin: 100px auto;
+  }
+  img {
+    width: 50px;
+    padding: 0 5px;
+  }
 
-        @include mq(tab) {
-        font-size: 30px;
-        }
+  h3 {
+    font-size: 21px;
+    color: #554a45;
 
-        
-             @include mq(pc) {
-              
-               font-size: 35px;
-            }
+    @include mq(tab) {
+      font-size: 30px;
     }
 
-    
-    
+    @include mq(pc) {
+      font-size: 35px;
+    }
+  }
 }
 
 #CONCEPT {
+  p {
+    text-align: center;
+    font-size: 14px;
+    color: #2a231f;
+    line-height: 2;
 
-    p {
-        text-align: center;
-        font-size: 14px;
-        color: #2A231F;
-        line-height: 2.0;
+    @include mq(tab) {
+    }
+  }
 
-        @include mq(tab) {
-        
-        }
+  span {
+    display: block;
+    margin: 50px auto;
+    background: #2a231f;
+    width: 22px;
+    height: 2px;
+  }
+
+  img {
+    margin: 20px 0;
+
+    @include mq(tab) {
+      margin: 150px 0;
+
+      height: auto;
+    }
+  }
+
+  #concept-title {
+    @include mq(tab) {
+      font-size: 25px;
     }
 
-    span {
-        display: block;
-        margin: 50px auto;
-        background: #2A231F;
-        width: 22px;
-        height: 2px;
+    @include mq(pc) {
+      font-size: 40px;
+    }
+  }
+
+  #concept-text {
+    @include mq(tab) {
+      font-size: 16px;
     }
 
-    img {
-        margin: 20px 0;
-
-        @include mq(tab) {
-            margin: 150px 0;
-            
-            height: auto;
-        }
-
-        
-             
+    @include mq(pc) {
+      font-size: 24px;
     }
+  }
 
-    #concept-title {
-        @include mq(tab) {
-            font-size: 25px;
-        }
-
-        
-             @include mq(pc) {
-              
-               font-size: 40px;
-            }
+  br:not(#not) {
+    @include mq(tab) {
+      display: none;
     }
-
-    #concept-text {
-        @include mq(tab) {
-            font-size: 16px;
-        }
-
-        
-             @include mq(pc) {
-                font-size: 24px;
-               
-            }
-    }
-
-    br:not(#not) {
-        @include mq(tab) {
-            display: none;
-        }
-    }
+  }
 }
 
 #choco1 {
-    width: 100vh;
+  width: 100vh;
 }
-
-
-
 
 // HISTORY
 
 #HISTORY {
-    position: relative;
-    
-    
-         @include mq(sp) {
-          
-           overflow: hidden;
-        }
-    
-         @include mq(pc) {
-          
-           
-        }
-   
+  position: relative;
+  overflow: hidden;
+
+  @include mq(sp) {
+    overflow: hidden;
+  }
+
+  @include mq(pc) {
+  }
 }
 
 #history-text1-wrapper {
-    // margin: 20px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    margin-bottom: 20px;
+  // margin: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin-bottom: 20px;
 }
 
 #history_img {
-    width: 347px;
-    
-    @include mq(tab) {
-        width: 559px;
-    }
+  width: 347px;
 
-    
-         @include mq(pc) {
-          position: absolute;
-          top: 30%;
-          left: 10%;
-           
-        }
+  @include mq(tab) {
+    width: 559px;
+  }
+
+  @include mq(pc) {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+  }
 }
 
 #history-text-wrapper {
-    display: flex;
-    flex-flow: column;
-    justify-content: start;
-    margin: 0 auto;
-    width: 360px;
+  display: flex;
+  flex-flow: column;
+  justify-content: start;
+  margin: 0 auto;
+  width: 360px;
 
-    @include mq(tab) {
-        width: 668px;
-    }
+  @include mq(tab) {
+    width: 668px;
+  }
 
-    
-         @include mq(pc) {
-          max-width: 45%;
-           position: absolute;
-           top: 800%;
-           right: 4%;
-        }
+  @include mq(pc) {
+    max-width: 45%;
+    position: absolute;
+    top: 800%;
+    right: 4%;
+  }
 }
 
 .history-text1 {
-    font-size: 12px;
-    line-height: 2.5;
-    text-align: center;
-    
-    @include mq(tab) {
-        font-size: 14px;
-        
-        
-    }
-    
-    
-         @include mq(pc) {
-          font-size: 20px;
-          width: 600px;
-           
-        }
+  font-size: 12px;
+  line-height: 2.5;
+  text-align: center;
 
+  @include mq(tab) {
+    font-size: 14px;
+  }
+
+  @include mq(pc) {
+    font-size: 20px;
+    width: 600px;
+  }
 }
 
 #history-text2 {
-    
-    text-align: start;
-    font-size: 11px;
-    line-height: 2;
+  text-align: start;
+  font-size: 11px;
+  line-height: 2;
 
-    @include mq(tab) {
-        font-size: 16px;
+  @include mq(tab) {
+    font-size: 16px;
 
-        br {
-            display: none;
-        }
+    br {
+      display: none;
     }
+  }
 
-    
-         @include mq(pc) {
-        //    position: absolute;
-        //    top: 50%;
-        //    right: 10%;
-           font-size: 18px;
-        //    margin-left: 30px;
-           mx-width: 50%;
-        }
-    
+  @include mq(pc) {
+    //    position: absolute;
+    //    top: 50%;
+    //    right: 10%;
+    font-size: 18px;
+    //    margin-left: 30px;
+    mx-width: 50%;
+  }
 }
 
 #history-text3 {
-    font-size: 13px;
-    text-align: center;
-    color: #2a131f;
-    margin-top: 350px;
-    // margin-bottom: 200px;
-    line-height: 2.0;
+  font-size: 13px;
+  text-align: center;
+  color: #2a131f;
+  margin-top: 350px;
+  // margin-bottom: 200px;
+  line-height: 2;
 
+  @include mq(tab) {
+    font-size: 16px;
+    margin-top: 520px;
+    margin-bottom: 100px;
+    width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+    letter-spacing: 2px;
+  }
+
+  @include mq(pc) {
+    position: absolute;
+    top: 4000%;
+    left: 28%;
+  }
+
+  br {
     @include mq(tab) {
-        font-size: 16px;
-        margin-top: 520px;
-        margin-bottom: 100px;
-        width: 700px;
-        margin-right: auto;
-        margin-left: auto;
-        letter-spacing: 2px;
+      display: none;
     }
-
-    
-         @include mq(pc) {
-          position: absolute;
-          top: 4000%;
-          left: 28%;
-           
-        }
-
-    br {
-        @include mq(tab) {
-            display: none;
-            
-        }
-    }
+  }
 }
 
 #text2-wrapper {
-    margin: 0 auto;
-    width: 100%;
-    margin-bottom: 70px;
-
-    
+  margin: 0 auto;
+  width: 100%;
+  margin-bottom: 70px;
 }
 
 #copy {
-    display: flex;
-    margin-left: 15%;
+  display: flex;
+  margin-left: 15%;
 
+  @include mq(tab) {
+    margin-left: 20%;
+  }
+
+  @include mq(pc) {
+    height: 900px;
+    position: absolute;
+    top: 2200%;
+    left: 0%;
+  }
+
+  p {
+    writing-mode: vertical-rl;
+    margin: 0 15px;
+    font-size: 20px;
+    font-family: "hina-mincho", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #554a45;
+    letter-spacing: 0.7em;
 
     @include mq(tab) {
-        margin-left: 20%;
+      font-size: 22px;
+
+      margin-top: 100px;
     }
 
-    
-         @include mq(pc) {
-          height: 900px;
-           position: absolute;
-           top: 2200%;
-           left: 0%;
-           
-        }
-
-    p {
-        writing-mode: vertical-rl;
-        margin: 0 15px;
-        font-size: 20px;
-        font-family: "hina-mincho", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        color: #554A45;
-        letter-spacing: 0.7em;
-
-        @include mq(tab) {
-            font-size: 22px;
-            
-            margin-top: 100px;
-
-        }
-
-        
-             @include mq(pc) {
-              
-               font-size: 48px;
-            }
+    @include mq(pc) {
+      font-size: 48px;
     }
+  }
 
-    :first-child {
-        margin-top: 200px;
-    }
-    
-    
+  :first-child {
+    margin-top: 200px;
+  }
 }
 
 #side-face {
-    position: absolute;
-    top: 65%;
-    right: -80px;
-    width: 500px;
+  position: absolute;
+  top: 65%;
+  right: -80px;
+  width: 500px;
 
-    
-         
-    
-    @include mq(tab) {
-        width: 837px;
-        top: 60%;
-        left: 0;
-    }
+  @include mq(tab) {
+    width: 90%;
+    top: 60%;
+    right: -10%;
+  }
 
-    
-         @include mq(pc) {
-           max-width: 100vw;
-           top: 2580%;
-           left: 35%;
-        }
+  @include mq(pc) {
+    max-width: 100vw;
+    top: 2580%;
+    left: 35%;
+  }
 }
 
 #blur1 {
-    position: absolute;
-    width: 1200px;
-    top: 50%;
-    left: -10%;
-    z-index: -10000;
+  position: absolute;
+  width: 1200px;
+  top: 50%;
+  left: -10%;
+  z-index: -10000;
 }
 
 //product
 
 #PRODUCT {
-    height: 800px;
+  height: 800px;
 
-    @include mq(tab){
-        height: 700px;
-        margin-bottom: 550px;
+  @include mq(tab) {
+    height: 700px;
+    margin-bottom: 550px;
+  }
 
-      
+  @include mq(pc) {
+    margin-top: 2000px;
+    height: 1000px;
+  }
+
+  p {
+    text-align: center;
+    color: #2a231f;
+    font-size: 14px;
+    line-height: 1.3;
+
+    @include mq(tab) {
+      font-size: 14px;
+      width: 600px;
+      margin: -20px auto 0;
+      line-height: 30px;
     }
 
-    
-         @include mq(pc) {
-          margin-top: 2000px;
-           height: 1000px;
-        }
-
-  
-    
-
-    p {
-        text-align: center;
-        color:#2a231f ;
-        font-size: 14px;
-        line-height: 1.3;
-
-        @include mq(tab) {
-            font-size: 14px;
-            width: 600px;
-            margin: -20px auto 0;
-            line-height: 30px;
-            
-           
-            
-        }
-
-        br {
-            @include mq(tab) {
-                display: none;
-            }
-        }
+    br {
+      @include mq(tab) {
+        display: none;
+      }
     }
+  }
 
-    h4 {
-        font-size: 18px;
-        color: #000;
-        text-align: center;
-        margin-top: 70px;
+  h4 {
+    font-size: 18px;
+    color: #000;
+    text-align: center;
+    margin-top: 70px;
 
-        
-             @include mq(tab) {
-                font-size: 22px;
-                letter-spacing: 3px;
-                margin-top: 350px;
-                margin-bottom: 50px;
-               
-            }
+    @include mq(tab) {
+      font-size: 22px;
+      letter-spacing: 3px;
+      margin-top: 350px;
+      margin-bottom: 50px;
     }
-    
-
-    
+  }
 }
 
 #product-image-wrapper {
-    height: 393px;
-    position: relative;
-    margin-bottom: 20px;
-    
+  height: 393px;
+  position: relative;
+  margin-bottom: 20px;
 }
 
 #product-box {
-    width: 215px;
-    position: absolute;
-    z-index: 10;
-    top: 10%;
-    left: 10%;
+  width: 215px;
+  position: absolute;
+  z-index: 10;
+  top: 10%;
+  left: 10%;
 
+  @include mq(tab) {
+    width: 364px;
+    top: 30%;
+    left: 15%;
+  }
 
-    
-         @include mq(tab) {
-          width: 364px;
-           top: 30%;
-           left: 15%;
-        }
-
-        
-             @include mq(pc) {
-               left: 30%;
-               top: 35%;
-            }
+  @include mq(pc) {
+    left: 30%;
+    top: 35%;
+  }
 }
 
 #choco-product {
-    width: 320px;
-    position: absolute;
-    z-index: 10;
-    top: 30%;
-    left: 15%;
+  width: 320px;
+  position: absolute;
+  z-index: 10;
+  top: 30%;
+  left: 15%;
 
-    
-         @include mq(tab) {
-          
-         width: 458px; 
-         top: 60%;
-         left: 44%; 
-        }
+  @include mq(tab) {
+    width: 458px;
+    top: 60%;
+    left: 44%;
+  }
 
-        
-             @include mq(pc) {
-              
-               top: 65%;
-               
-            }
+  @include mq(pc) {
+    top: 65%;
+  }
 }
 
 #blur {
-    position: absolute;
-    width: 100%;
-    z-index: 2;
-    top: 10%;
-    left:0%;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  top: 10%;
+  left: 0%;
 
-    
-         @include mq(pc) {
-          top: 15%;
-          left: 20%;
-         width: 1122px;  
-        }
+  @include mq(pc) {
+    top: 15%;
+    left: 20%;
+    width: 1122px;
+  }
 }
 
 #contents {
-    height: 32px;
-    border: 0.5px solid #000;
-    width: 65px;
-    border-radius: 30px;
-    font-size:12px ;
-    text-align: center;
-    line-height: 2.8;
+  height: 32px;
+  border: 0.5px solid #000;
+  width: 65px;
+  border-radius: 30px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 2.8;
 
-    
-         @include mq(tab) {
-            width: 150px;
-            border-radius: 15px;
-            font-size: 12px;
-            margin-top: -20px;
-           margin-left: 2px;
-           
-        }
+  @include mq(tab) {
+    width: 150px;
+    border-radius: 15px;
+    font-size: 12px;
+    margin-top: -20px;
+    margin-left: 2px;
+  }
 
-        
-             @include mq(pc) {
-              margin-left: 0;
-               
-            }
+  @include mq(pc) {
+    margin-left: 0;
+  }
 }
 
 #prace {
-    height: 32px;
-    border: 0.5px solid #000;
-    width: 65px;
-    border-radius: 30px;
-    font-size:12px ;
-    text-align: center;
-    line-height: 2.8;
+  height: 32px;
+  border: 0.5px solid #000;
+  width: 65px;
+  border-radius: 30px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 2.8;
 
-    
-         @include mq(tab) {
-            width: 150px;
-            font-size: 12px;
-            margin-top: -15px;
-            border-radius: 15px;
-           
-        }
+  @include mq(tab) {
+    width: 150px;
+    font-size: 12px;
+    margin-top: -15px;
+    border-radius: 15px;
+  }
 }
 
 #choco-desc-wrapper {
-
-    margin: 30px auto;
-    width: 283px;
-    img {
-        width: 65px;
-    }
+  margin: 30px auto;
+  width: 283px;
+  img {
+    width: 65px;
+  }
 }
 
 .choco-desc {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    p {
-        margin-left: 20px;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  p {
+    margin-left: 20px;
 
-        
-             @include mq(tab) {
-               margin-top: 50px;
-              
-               
-            }
+    @include mq(tab) {
+      margin-top: 50px;
     }
-
-
-    
-        
-    
+  }
 }
 
-//LINEUP 
-
-
+//LINEUP
 
 #LINEUP {
+  p {
+    color: #2a231f;
+    text-align: center;
+    line-height: 2;
 
- 
-
-    p {
-        
-        color: #2A231F;
-        text-align: center;
-        line-height: 2;
-
-        
-             @include mq(pc) {
-              
-               margin-top: 10px;
-            }
+    @include mq(pc) {
+      margin-top: 10px;
     }
-
-
-  
-
+  }
 }
 
 #lineup-title {
-    font-size: 14px;
+  font-size: 14px;
 
-    
-         @include mq(tab) {
-            font-size: 16px;
-            letter-spacing: 2px;
-            margin-top: -90px;
-            margin-bottom: 80px;
-            
-        }
+  @include mq(tab) {
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-top: -90px;
+    margin-bottom: 80px;
+  }
 
-        
-             @include mq(pc) {
-                font-size: 20px;
-               
-            }
+  @include mq(pc) {
+    font-size: 20px;
+  }
 }
 
 #lineup-wrapper {
-    padding: 15px;
+  padding: 15px;
 
-    
-         @include mq(tab) {
-            display: flex;
-            position: relative;
-            margin: 0 auto;
-            width: 720px;
-          
-           
-        }
+  @include mq(tab) {
+    display: flex;
+    position: relative;
+    margin: 0 auto;
+    width: 720px;
+  }
 
-        
-             @include mq(pc) {
-              width: 800px;
-              justify-content: space-between;
-                align-items: center;
-               
-            }
+  @include mq(pc) {
+    width: 800px;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .top-items {
-    display: flex;
-    justify-content: space-around;
-
-    
-     
-         
+  display: flex;
+  justify-content: space-around;
 }
 
 .bottom-items {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 
-    @include mq(tab) {
-     
-        
-     
-       
-        
-     }
+  @include mq(tab) {
+  }
 }
 
 .left-items {
-    
-    img {
-        width: 150px;
-        display: block;
-        margin: 0 auto;
+  img {
+    width: 150px;
+    display: block;
+    margin: 0 auto;
 
-        
-             @include mq(pc) {
-              width: 200px;
-               align-items: center;
-            }
+    @include mq(pc) {
+      width: 200px;
+      align-items: center;
     }
+  }
 }
 
 .right-items {
+  @include mq(tab) {
+  }
 
-    
-         @include mq(tab) {
-        
-           
-        }
+  img {
+    width: 150px;
+    display: block;
+    margin: 0 auto;
 
-
-    img {
-        width: 150px;
-        display: block;
-        margin: 0 auto;
-
-        
-        
-             @include mq(pc) {
-              width: 200px
-               
-            }
+    @include mq(pc) {
+      width: 200px;
     }
+  }
 }
 
 .lineup-item-title {
-    width: 180px;
-
-   
-    
-
+  width: 180px;
 }
 
 .lineup-title {
-    font-size: 12px;
-
-
+  font-size: 12px;
 }
 
 .prace-spacing {
-    margin-left: 40px;
-    font-size: 10px;
+  margin-left: 40px;
+  font-size: 10px;
 
-    
-         @include mq(pc) {
-          
-           font-size: 16px;
-        }
+  @include mq(pc) {
+    font-size: 16px;
+  }
 }
-
-
 
 //GIFT
 
 .gift-left {
-    // width: 164px;
-    margin: 0 auto;
+  // width: 164px;
+  margin: 0 auto;
 
-    
-         @include mq(pc) {
-         
-            margin-left: 20%;
-           
-        }
-
+  @include mq(pc) {
+    margin-left: 20%;
+  }
 }
 
 .gift-right {
-    // width: 194px;
-    margin: 0 auto;
-    margin-top: 8px;
+  // width: 194px;
+  margin: 0 auto;
+  margin-top: 8px;
 
-    
-         @include mq(pc) {
-          
-         margin-right: 20%;  
-        }
+  @include mq(pc) {
+    margin-right: 20%;
+  }
 }
 
 #gift-cap {
-    text-align: center;
-    font-size: 10px;
-    line-height: 2.5;
+  text-align: center;
+  font-size: 10px;
+  line-height: 2.5;
 
-    
-         @include mq(tab) {
-            font-size: 16px;
-            margin-top: -40px;
-            margin-bottom: 20px;
-          
-           
-        }
+  @include mq(tab) {
+    font-size: 16px;
+    margin-top: -40px;
+    margin-bottom: 20px;
+  }
 
-        
-             @include mq(pc) {
-              
-              
-            }
-    
+  @include mq(pc) {
+  }
 }
 
 #gift-nomal {
-    width: 164px;
-    display: block;
-    margin: 0 auto;
+  width: 164px;
+  display: block;
+  margin: 0 auto;
 
-    
-         @include mq(tab) {
-            width: 320px;
-          
-           
-        }
+  @include mq(tab) {
+    width: 320px;
+  }
 }
 
 #gift-red {
-    width: 194px;
-    display: block;
-    margin: 0 auto;
+  width: 194px;
+  display: block;
+  margin: 0 auto;
 
-    
-         @include mq(tab) {
-            width: 370px;
-          
-           
-        }
+  @include mq(tab) {
+    width: 370px;
+  }
 }
 
 .gift-item-title {
-    width: 164px;
-    margin: 0 auto;
+  width: 164px;
+  margin: 0 auto;
 
-    
-         @include mq(tab) {
-            width: 250px;
-          
-           
-        }
+  @include mq(tab) {
+    width: 250px;
+  }
 
-    .gift-title {
-        font-size:10px;
-        text-align: center;
+  .gift-title {
+    font-size: 10px;
+    text-align: center;
 
-        
-             @include mq(tab) {
-                font-size: 18px;
-                margin-bottom: -10px;
-         
-              
-               
-            }
+    @include mq(tab) {
+      font-size: 18px;
+      margin-bottom: -10px;
     }
+  }
 }
 
-
-
 .gift-wrapper {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .gift-prace-spacing {
-    font-size: 10px;
-    margin-left: 60px;
+  font-size: 10px;
+  margin-left: 60px;
 
-    
-         @include mq(tab) {
-            font-size: 16px;
-            margin-top: 2px;
-          
-           
-        }
+  @include mq(tab) {
+    font-size: 16px;
+    margin-top: 2px;
+  }
 }
 
 #detail {
-    text-align: center;
-    font-size: 12px;
-    color: #554A45;
-    margin-top: 50px;
-    margin-bottom: 30px;
+  text-align: center;
+  font-size: 12px;
+  color: #554a45;
+  margin-top: 50px;
+  margin-bottom: 30px;
 
-    
-         @include mq(tab) {
-            font-size: 18px;
-
-          
-           
-        }
+  @include mq(tab) {
+    font-size: 18px;
+  }
 }
-
 
 // topics
 
 #TOPICS {
-    position: relative;
+  position: relative;
 }
 
 #topics-cap {
-    text-align: center;
-    font-size: 10px;
-    margin-top: -20px;
+  text-align: center;
+  font-size: 10px;
+  margin-top: -20px;
 
-    
-         @include mq(tab) {
-            font-size: 18px;
-            margin-top: -40px;
-            margin-bottom: 80px;
-        
-          
-           
-        }
+  @include mq(tab) {
+    font-size: 18px;
+    margin-top: -40px;
+    margin-bottom: 80px;
+  }
 }
 
 //topicsスライダー
@@ -1257,29 +1034,26 @@ h2 span {
   width: 300px;
   height: 424px;
   margin: 30px auto;
-  
-  overflow: hidden; /* はみ出したスライドを隠す */
-  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .5);
 
-  
-       @include mq(tab) {
-        
-         width: 400px;
-         height: 524px;
-      }
+  overflow: hidden; /* はみ出したスライドを隠す */
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.5);
+
+  @include mq(tab) {
+    width: 400px;
+    height: 524px;
+  }
 }
 /*  ↓ スライド（コンテンツ） */
-.slide { /*スライド全体 */
+.slide {
+  /*スライド全体 */
   width: 300%;
   height: 100%;
   display: flex;
   transition: all 0.3s;
   position: relative;
-
-  
-    
 }
-.slide div { /* スライド */
+.slide div {
+  /* スライド */
   width: 33.33%;
   height: 100%;
   position: relative;
@@ -1288,44 +1062,47 @@ h2 span {
   justify-content: center;
   align-items: start;
 
-   img {
+  img {
     width: 300px;
     height: auto;
     display: block;
 
-    
-         @include mq(tab) {
-          
-           width: 400px;
-        }
-   }
-
-  
-
+    @include mq(tab) {
+      width: 400px;
+    }
+  }
 }
-.slide1 { /* スライドさせるために必要なクラス */
+.slide1 {
+  /* スライドさせるために必要なクラス */
   transform: translateX(0);
 }
-.slide2 { /* スライドさせるために必要なクラス */
+.slide2 {
+  /* スライドさせるために必要なクラス */
   transform: translateX(-33.33%);
 }
-.slide3 { /* スライドさせるために必要なクラス */
+.slide3 {
+  /* スライドさせるために必要なクラス */
   transform: translateX(-66.66%);
 }
 
-.slide4 { /* スライドさせるために必要なクラス */
+.slide4 {
+  /* スライドさせるために必要なクラス */
   transform: translateX(-99.99%);
 }
-.slide div:nth-of-type(1){ /* 背景色 */
+.slide div:nth-of-type(1) {
+  /* 背景色 */
   background-color: #fff;
 }
-.slide div:nth-of-type(2){ /* 背景色 */
+.slide div:nth-of-type(2) {
+  /* 背景色 */
   background-color: #fff;
 }
-.slide div:nth-of-type(3){ /* 背景色 */
+.slide div:nth-of-type(3) {
+  /* 背景色 */
   background-color: #fff;
 }
-.slide div:nth-of-type(4){ /* 背景色 */
+.slide div:nth-of-type(4) {
+  /* 背景色 */
   background-color: #fff;
 }
 
@@ -1338,14 +1115,13 @@ h2 span {
   bottom: 45%;
   z-index: 10;
   cursor: pointer;
-  color: #554A45;
+  color: #554a45;
   font-size: 23px;
 
-  
-       @include mq(tab) {
-        font-size: 50px;
-        right: 10%;
-      }
+  @include mq(tab) {
+    font-size: 50px;
+    right: 10%;
+  }
 }
 .prev {
   position: absolute;
@@ -1360,20 +1136,16 @@ h2 span {
 
   @include mq(tab) {
     font-size: 50px;
-     left: 10%;
+    left: 10%;
   }
 }
 /* ↓ インジケーター */
 .indicator {
-  width: 100%;
-  position: absolute;
-  top: 88%;
   display: flex;
   column-gap: 18px;
   z-index: 10;
   justify-content: center;
   align-items: center;
-  
 }
 .indicator li {
   width: 9px;
@@ -1381,7 +1153,7 @@ h2 span {
   border-radius: 50%;
   list-style: none;
   background-color: #d9d9d9;
-  
+  margin-top: 5%;
   cursor: pointer;
 }
 .indicator li:first-of-type {
@@ -1389,423 +1161,351 @@ h2 span {
 }
 
 .slider-date {
-    display: block;
-    position: absolute;
-    top: 85%;
-    left: 5%;
-    font-size: 10px;
+  display: block;
+  position: absolute;
+  top: 85%;
+  left: 5%;
+  font-size: 10px;
 
-    
-         @include mq(tab) {
-          
-           top: 90%;
-        }
+  @include mq(tab) {
+    top: 90%;
+  }
 }
 
 .slider-text {
-    display: block;
-    text-align: center;
-    font-size: 12px;
-    position: absolute;
-    top: 90%;
-    left: 17%;
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  position: absolute;
+  top: 90%;
+  left: 17%;
 
-    
-         @include mq(tab) {
-          
-           top: 92.5%;
-           left: 26%;
-        }
+  @include mq(tab) {
+    top: 92.5%;
+    left: 26%;
+  }
 }
 
-
-
 .chart {
-    width: 167px;
-    margin: 70px auto 0 auto;
-    background: #a4948f;
+  width: 167px;
+  margin: 70px auto 0 auto;
+  background: #a4948f;
+  color: #fff;
+  text-align: center;
+  line-height: 36px;
+  border-radius: 20px;
+  font-size: 10px;
+
+  @include mq(tab) {
+    width: 200px;
+    height: 60px;
+    font-size: 25px;
+    line-height: 58px;
+    border-radius: 30px;
+    margin-top: 100px;
+  }
+
+  a {
     color: #fff;
-    text-align: center;
-    line-height: 36px;
-    border-radius: 20px;
-    font-size: 10px;
+    display: block;
+    cursor: pointer;
+    font-size: 12px;
 
-    
-         @include mq(tab) {
-            width: 200px;
-            height: 60px;
-            font-size: 25px;
-            line-height: 58px;
-            border-radius: 30px;
-            margin-top: 100px;
-          
-           
-        }
-
-    a {
-        color:#fff ;
-        display: block;
-        cursor: pointer;
-        font-size: 12px;
-
-        
-             @include mq(tab) {
-                font-size: 20px;
-                margin-bottom: -100px;
-               
-              
-               
-            }
+    @include mq(tab) {
+      font-size: 20px;
+      margin-bottom: -100px;
     }
+  }
 }
 
 //MOVIE
 
 #movie {
-    width: 355px;
-    margin: 0 auto;
-    line-height:237px ;
-    border: 1px solid #000;
-    text-align: center;
-    
+  width: 355px;
+  margin: 0 auto;
+  line-height: 237px;
+  border: 1px solid #000;
+  text-align: center;
 }
 
 //access
 
 iframe {
-    display: block;
-    width:95% ;
-    height: 395px;
-    margin: 0 auto;
+  display: block;
+  width: 95%;
+  height: 395px;
+  margin: 0 auto;
 
-    
-         @include mq(tab) {
-        
-            display: inline;
-            width: 50%;
-            margin-left: 20px;
-           
-        }
+  @include mq(tab) {
+    display: inline;
+    width: 50%;
+    margin-left: 20px;
+  }
 
-        
-             @include mq(pc) {
-              position: absolute;
-              left: 10%;
-             width: 50%;  
-             height: 500px;
-            }
+  @include mq(pc) {
+    position: absolute;
+    left: 10%;
+    width: 50%;
+    height: 500px;
+  }
 }
 
 #ACCESS {
+  @include mq(tab) {
+    position: relative;
+  }
 
-    
-         @include mq(tab) {
-            position: relative;
-          
-           
-        }
+  @include mq(pc) {
+    padding-bottom: 1000px;
+  }
 
-        
-             @include mq(pc) {
-              padding-bottom: 1000px;
-               
-            }
+  #sibuya-honten {
+    width: 130px;
+    line-height: 41px;
+    border: 0.8px solid #000;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-left: 40px;
 
-    #sibuya-honten {
-        width: 130px;
-        line-height: 41px;
-        border: 0.8px solid #000;
-        border-radius: 10px;
-        text-align: center;
-        font-size: 16px;
-        margin-top: 20px;
-        margin-left: 40px;
-
-        
-             @include mq(tab) {
-                font-size: 18px;
-                position: absolute;
-                top: 40%;
-                left: 55%;
-              
-               
-            }
-
-            
-                 @include mq(pc) {
-                  font-size: 20px;
-                  width: 128px;
-                  line-height: 52px;
-                  top: 30%;
-                  left: 65%;
-                   
-                }
+    @include mq(tab) {
+      font-size: 18px;
+      position: absolute;
+      top: 40%;
+      left: 55%;
     }
 
-    p {
+    @include mq(pc) {
+      font-size: 20px;
+      width: 128px;
+      line-height: 52px;
+      top: 30%;
+      left: 65%;
+    }
+  }
+
+  p {
     font-size: 16px;
     line-height: 2;
+  }
+
+  #access-line {
+    width: 330px;
+    background: #000;
+    height: 0.8px;
+    display: block;
+    margin: 10px auto;
+  }
+
+  #access-text-wrapper {
+    margin: 30px auto 0 auto;
+    width: 330px;
+
+    @include mq(tab) {
+      position: absolute;
+      top: 55%;
+      left: 60%;
     }
 
-    #access-line {
-        width: 330px;
-        background: #000;
-        height: 0.8px;
-        display: block;
-        margin: 10px auto;
-
+    @include mq(pc) {
+      left: 67%;
+      top: 40%;
     }
-
-    #access-text-wrapper {
-        margin: 30px auto 0 auto;
-        width: 330px;
-
-        
-             @include mq(tab) {
-                position: absolute;
-                top: 55%;
-                left: 60%;
-              
-               
-            }
-
-            
-                 @include mq(pc) {
-                  left: 67%;
-                   top: 40%;
-                }
-    }
+  }
 }
 
 //CONTACT
 
 #CONTACT {
+  #contact-text {
+    font-size: 10px;
+    color: #554a45;
+    text-align: center;
+    line-height: 1.5;
 
-    #contact-text {
-        font-size: 10px;
-        color: #554a45;
-        text-align: center;
-        line-height: 1.5;
-       
+    @include mq(tab) {
+      font-size: 18px;
+      letter-spacing: 1.5px;
+      line-height: 2;
+      margin-bottom: 100px;
+    }
+  }
 
-        
-             @include mq(tab) {
-                font-size: 18px;
-                letter-spacing: 1.5px;
-                line-height: 2;
-                margin-bottom: 100px;
-              
-               
-            }
+  #contact-icon {
+    display: flex;
+    justify-content: space-between;
+    width: 158px;
+    margin: 40px auto;
+
+    a img {
+      width: 40px;
+    }
+  }
+
+  article {
+    h5 {
+      text-align: center;
+      font-size: 16px;
+      color: #554a45;
+      margin-bottom: 30px;
+
+      @include mq(tab) {
+        letter-spacing: 2px;
+        margin-bottom: 70px;
+      }
     }
 
-    #contact-icon  {
-        display: flex;
-        justify-content: space-between;
-        width: 158px;
-        margin: 40px auto;
+    section {
+      width: 298px;
+      margin: 0 auto;
 
-        a img {
-            width: 40px;
+      @include mq(pc) {
+      }
 
-            
-        
-        }
-
-        
-          
-        
-
-    }
-
-    article {
-
-        h5 {
-            text-align: center;
-            font-size: 16px;
+      form {
+        dl {
+          p {
+            margin-bottom: 5px;
+            margin-top: 20px;
+            font-size: 10px;
             color: #554a45;
-            margin-bottom: 30px;
 
-            
-                 @include mq(tab) {
-                    letter-spacing: 2px;
-                    margin-bottom: 70px;
-                  
-                   
-                }
-        }
-
-        section {
-            width: 298px;
-            margin: 0 auto;
-
-
-            
-                 @include mq(pc) {
-                  
-                   
-                }
-
-            form {
-
-                dl {
-
-                    p {
-                        margin-bottom: 5px;
-                        margin-top: 20px;
-                        font-size: 10px;
-                        color: #554a45;
-
-                        
-                             @include mq(tab) {
-                                font-size: 18px;
-                                margin-left: -120px;
-                              
-                               
-                            }
-                    }
-
-                    input {
-                        display: block;
-                        width: 298px;
-                        height: 40px;
-                        
-                        border: 1px solid #85776b;
-                        background: #d2cdc8;
-
-                        
-                             @include mq(tab) {
-                                width: 600px;
-                                margin-left: -140px;
-                              
-                               
-                            }
-                    }
-
-                    textarea {
-                        display: block;
-                        height: 170px;
-                        width: 298px;
-                        
-                        border: 1px solid #85776b;
-                        background: #d2cdc8;
-
-                        &::placeholder {
-                            color: #888481;
-                            font-size: 10px;
-                            padding: 5px 0 0 5px;
-                        }
-
-                        
-                             @include mq(tab) {
-                                width: 600px;
-                                margin-left: -140px;
-                              
-                               
-                            }
-                    }
-                }
-
-                #submit-button {
-                    display: block;
-                    width: 121px;
-                    height: 35px;
-                    border-radius: 20px;
-                    border: 1px solid #85776b;
-                    background: #d2cdc8;
-                    margin: 50px auto 40px auto;
-
-                    
-                         @include mq(tab) {
-                            margin: 120px auto;
-                            font-size: 25px;
-                            width: 170px;
-                            height: 60px;
-                            border-radius: 30px;
-                            letter-spacing: 2px;
-                          
-                           
-                        }
-                }
-
+            @include mq(tab) {
+              font-size: 18px;
+              margin-left: -120px;
             }
+          }
+
+          input {
+            display: block;
+            width: 298px;
+            height: 40px;
+
+            border: 1px solid #85776b;
+            background: #d2cdc8;
+
+            @include mq(tab) {
+              width: 600px;
+              margin-left: -140px;
+            }
+          }
+
+          textarea {
+            display: block;
+            height: 170px;
+            width: 298px;
+
+            border: 1px solid #85776b;
+            background: #d2cdc8;
+
+            &::placeholder {
+              color: #888481;
+              font-size: 10px;
+              padding: 5px 0 0 5px;
+            }
+
+            @include mq(tab) {
+              width: 600px;
+              margin-left: -140px;
+            }
+          }
         }
+
+        #submit-button {
+          display: block;
+          width: 121px;
+          height: 35px;
+          border-radius: 20px;
+          border: 1px solid #85776b;
+          background: #d2cdc8;
+          margin: 50px auto 40px auto;
+
+          @include mq(tab) {
+            margin: 120px auto;
+            font-size: 25px;
+            width: 170px;
+            height: 60px;
+            border-radius: 30px;
+            letter-spacing: 2px;
+          }
+        }
+      }
     }
+  }
 }
 
 //影の設定
 
 .box-shadow {
-    box-shadow:  4px 4px  10px rgba(0, 0, 0, .5);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-// footer 
+// footer
 
 footer {
-    height:120px ;
-    background: #D2CDC8;
-    color: #554A45;
+  height: 120px;
+  background: #d2cdc8;
+  color: #554a45;
 }
 
 footer img {
-    display: block;
-    width: 74px;
-    margin: 0 auto;
-    padding: 15px;
+  display: block;
+  width: 74px;
+  margin: 0 auto;
+  padding: 15px;
 }
 
 #add {
-    margin-top: 5px;
-    margin-bottom: 3px;
+  margin-top: 5px;
+  margin-bottom: 3px;
 }
 
 #tel {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
-
 footer p {
-    font-size: 10px;
-    text-align: center;
-   
+  font-size: 10px;
+  text-align: center;
 }
 
 footer small {
-    display: block;
-    font-size: 8px;
-    text-align: center;
-    padding-bottom: 10px;
+  display: block;
+  font-size: 8px;
+  text-align: center;
+  padding-bottom: 10px;
 }
 
 // topに戻るボタン
 #back {
-    width: 27px;
-    height: 27px;
-    background: #554a45;
-    border-radius: 9999px;
-    position: fixed;
-    top: 84%;
-    left: 90%;
-    z-index: 1000;
-    display: block;
-    transition: 1s;
-    opacity: 0;
-  }
-  
-  #triangle {
-    border-right: 9px solid transparent;
-    border-bottom: 15px solid #fff;
-    border-left: 9px solid transparent;
-    position: absolute;
-    z-index: 1000;
-    top: 20%;
-    left: 17%;
-  }
-  
-  #back-text {
-    font-size: 8px;
-    color: #554a45;
-    position: absolute;
-    top: 110%;
-    left: 20%;
-  }
+  width: 27px;
+  height: 27px;
+  background: #554a45;
+  border-radius: 9999px;
+  position: fixed;
+  top: 84%;
+  left: 90%;
+  z-index: 1000;
+  display: block;
+  transition: 1s;
+  opacity: 0;
+}
+
+#triangle {
+  border-right: 9px solid transparent;
+  border-bottom: 15px solid #fff;
+  border-left: 9px solid transparent;
+  position: absolute;
+  z-index: 1000;
+  top: 20%;
+  left: 17%;
+}
+
+#back-text {
+  font-size: 8px;
+  color: #554a45;
+  position: absolute;
+  top: 110%;
+  left: 20%;
+}
