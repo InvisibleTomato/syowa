@@ -290,7 +290,7 @@ header h1 {
 .top-main {
   position: relative;
   z-index: -10;
-  height: 631px;
+  height: auto;
   max-width: 100%;
 
   @include mq(tab) {
@@ -298,8 +298,9 @@ header h1 {
   }
 
   @include mq(pc) {
-    width: 1920px;
-    overflow: hidden;
+    width: 100vw;
+    height: auto;
+    // overflow: hidden;
     padding-top: 100px;
   }
 }
@@ -318,6 +319,11 @@ h2 {
     margin-top: 50px;
     font-size: 30px;
   }
+
+  @include mq(pc) {
+    font-size: 1.4em;
+    margin-top: 6%;
+  }
 }
 
 h2 span {
@@ -334,6 +340,9 @@ h2 span {
 
   @include mq(tab) {
     height: 100vh;
+  }
+
+  @include mq(pc) {
   }
 }
 .slide-image {
@@ -360,6 +369,10 @@ h2 span {
   @include mq(tab) {
     margin: 10% auto;
   }
+
+  @include mq(pc) {
+    margin: 5% 0;
+  }
   img {
     width: 50px;
     padding: 0 5px;
@@ -374,13 +387,17 @@ h2 span {
     }
 
     @include mq(pc) {
-      font-size: 35px;
+      margin: 0;
     }
   }
 }
 
 #CONCEPT {
   overflow: hidden;
+
+  .section-title-concept {
+    // margin-top: -3%;
+  }
 
   p {
     text-align: center;
@@ -416,7 +433,7 @@ h2 span {
     }
 
     @include mq(pc) {
-      font-size: 40px;
+      font-size: 1.4em;
     }
   }
 
@@ -426,7 +443,7 @@ h2 span {
     }
 
     @include mq(pc) {
-      font-size: 24px;
+      font-size: 1em;
     }
   }
 
@@ -445,13 +462,29 @@ h2 span {
 
 #HISTORY {
   position: relative;
-  overflow: hidden;
 
   @include mq(sp) {
     overflow: hidden;
   }
 
+  @include mq(tab) {
+    overflow: hidden;
+  }
+
   @include mq(pc) {
+    height: 2000px;
+  }
+
+  .history-flex {
+    display: block;
+
+    @include mq(pc) {
+      display: flex;
+    }
+  }
+
+  .face-and-copy {
+    padding-top: 10%;
   }
 }
 
@@ -459,6 +492,12 @@ h2 span {
   display: flex;
   flex-direction: column;
   margin-bottom: 5%;
+
+  @include mq(pc) {
+    display: block;
+    margin-top: 20%;
+    margin-bottom: 10%;
+  }
 }
 
 #history_img {
@@ -469,16 +508,15 @@ h2 span {
   }
 
   @include mq(pc) {
-    position: absolute;
-    top: 30%;
-    left: 10%;
+    width: 40%;
+    margin-left: 10%;
   }
 }
 
 #history-text-wrapper {
   display: flex;
   flex-flow: column;
-  justify-content: start;
+  justify-content: flex-start;
   margin: 0 auto;
   width: 360px;
 
@@ -487,17 +525,14 @@ h2 span {
   }
 
   @include mq(pc) {
-    max-width: 45%;
-    position: absolute;
-    top: 800%;
-    right: 4%;
+    margin-left: 5%;
+    width: 70%;
   }
 }
 
 .history-text1 {
   font-size: 12px;
   line-height: 2.5;
-  text-align: center;
 
   @include mq(tab) {
     font-size: 1.3em;
@@ -505,13 +540,17 @@ h2 span {
   }
 
   @include mq(pc) {
-    font-size: 20px;
-    width: 600px;
+    font-size: 1em;
+    text-align: start;
+    margin-right: 0;
   }
 }
 
 .history-text1-right {
-  margin-left: 10%;
+  @include mq(pc) {
+    font-size: 1em;
+    margin-left: 5%;
+  }
 }
 
 #history-text2 {
@@ -528,12 +567,9 @@ h2 span {
   }
 
   @include mq(pc) {
-    //    position: absolute;
-    //    top: 50%;
-    //    right: 10%;
-    font-size: 18px;
-    //    margin-left: 30px;
-    mx-width: 50%;
+    font-size: 1em;
+    width: 90%;
+    line-height: 2.5;
   }
 }
 
@@ -569,9 +605,6 @@ h2 span {
 }
 
 #text2-wrapper {
-  margin: 0 auto;
-  width: 100%;
-  margin-bottom: 70px;
 }
 
 #copy {
@@ -585,7 +618,7 @@ h2 span {
   @include mq(pc) {
     height: 900px;
     position: absolute;
-    top: 2200%;
+    top: 50%;
     left: 0%;
   }
 
@@ -606,7 +639,7 @@ h2 span {
     }
 
     @include mq(pc) {
-      font-size: 48px;
+      font-size: 1.8em;
     }
   }
 
@@ -628,17 +661,17 @@ h2 span {
   }
 
   @include mq(pc) {
-    max-width: 100vw;
-    top: 2580%;
+    width: 60%;
+    top: 50%;
     left: 35%;
   }
 }
 
 #blur1 {
   position: absolute;
-  width: 1200px;
-  top: 50%;
-  left: -10%;
+  width: 80%;
+  top: 150%;
+  left: 0%;
   z-index: -10000;
 }
 
@@ -653,8 +686,8 @@ h2 span {
   }
 
   @include mq(pc) {
-    margin-top: 2000px;
     height: 1000px;
+    margin-bottom: 0;
   }
 
   p {
