@@ -473,7 +473,7 @@ h2 span {
   }
 
   @include mq(pc) {
-    height: 2000px;
+    height: 1800px;
   }
 
   .history-flex {
@@ -671,9 +671,20 @@ h2 span {
 #blur1 {
   position: absolute;
   width: 80%;
-  top: 150%;
-  left: 0%;
+  top: 85%;
+  left: -30%;
   z-index: -10000;
+
+  @include mq(tab) {
+    top: 55%;
+    left: -10%;
+  }
+
+  @include mq(pc) {
+    width: 80%;
+    top: 40%;
+    left: -10%;
+  }
 }
 
 //product
@@ -688,7 +699,7 @@ h2 span {
 
   @include mq(pc) {
     height: 1000px;
-    margin-bottom: 0;
+    margin-bottom: 10%;
   }
 
   p {
@@ -883,8 +894,7 @@ h2 span {
   }
 
   @include mq(pc) {
-    width: 800px;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
   }
 }

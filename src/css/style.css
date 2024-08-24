@@ -438,7 +438,7 @@ h2 span {
 }
 @media screen and (min-width: 1025px) {
   #HISTORY {
-    height: 2000px;
+    height: 1800px;
   }
 }
 #HISTORY .history-flex {
@@ -643,9 +643,22 @@ h2 span {
 #blur1 {
   position: absolute;
   width: 80%;
-  top: 150%;
-  left: 0%;
+  top: 85%;
+  left: -30%;
   z-index: -10000;
+}
+@media screen and (min-width: 768px) {
+  #blur1 {
+    top: 55%;
+    left: -10%;
+  }
+}
+@media screen and (min-width: 1025px) {
+  #blur1 {
+    width: 80%;
+    top: 40%;
+    left: -10%;
+  }
 }
 
 #PRODUCT {
@@ -660,7 +673,7 @@ h2 span {
 @media screen and (min-width: 1025px) {
   #PRODUCT {
     height: 1000px;
-    margin-bottom: 0;
+    margin-bottom: 10%;
   }
 }
 #PRODUCT p {
@@ -863,8 +876,7 @@ h2 span {
 }
 @media screen and (min-width: 1025px) {
   #lineup-wrapper {
-    width: 800px;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
   }
 }
