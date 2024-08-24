@@ -11,9 +11,10 @@ $breakpoint: (
   }
 }
 
-* {
-  outline: 1px solid magenta;
-}
+//デバッグ用アウトライン
+// * {
+//   outline: 1px solid magenta;
+// }
 
 body {
   font-family: "Times New Roman", Times, serif;
@@ -351,12 +352,11 @@ h2 span {
 .section-title {
   display: flex;
   justify-content: center;
-  margin-top: 100px;
-  margin-bottom: 40px;
+  margin: 10% 0;
   align-items: center;
 
   @include mq(tab) {
-    margin: 100px auto;
+    margin: 10% auto;
   }
   img {
     width: 50px;
@@ -378,6 +378,8 @@ h2 span {
 }
 
 #CONCEPT {
+  overflow: hidden;
+
   p {
     text-align: center;
     font-size: 14px;
@@ -400,7 +402,7 @@ h2 span {
     margin: 20px 0;
 
     @include mq(tab) {
-      margin: 150px 0;
+      margin: 0;
 
       height: auto;
     }
@@ -452,18 +454,16 @@ h2 span {
 }
 
 #history-text1-wrapper {
-  // margin: 20px 20px;
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  margin-bottom: 20px;
+  margin-bottom: 5%;
 }
 
 #history_img {
   width: 347px;
 
   @include mq(tab) {
-    width: 559px;
+    width: 80%;
   }
 
   @include mq(pc) {
@@ -498,7 +498,8 @@ h2 span {
   text-align: center;
 
   @include mq(tab) {
-    font-size: 14px;
+    font-size: 1.3em;
+    margin-right: auto;
   }
 
   @include mq(pc) {
@@ -507,13 +508,17 @@ h2 span {
   }
 }
 
+.history-text1-right {
+  margin-left: 10%;
+}
+
 #history-text2 {
   text-align: start;
   font-size: 11px;
   line-height: 2;
 
   @include mq(tab) {
-    font-size: 16px;
+    font-size: 1.3em;
 
     br {
       display: none;
@@ -701,7 +706,7 @@ h2 span {
   @include mq(tab) {
     width: 364px;
     top: 30%;
-    left: 15%;
+    left: 10%;
   }
 
   @include mq(pc) {
@@ -720,7 +725,7 @@ h2 span {
   @include mq(tab) {
     width: 458px;
     top: 60%;
-    left: 44%;
+    left: 36%;
   }
 
   @include mq(pc) {
@@ -836,9 +841,9 @@ h2 span {
 
   @include mq(tab) {
     display: flex;
-    position: relative;
+    justify-content: center;
     margin: 0 auto;
-    width: 720px;
+    // width: 100%;
   }
 
   @include mq(pc) {
@@ -867,6 +872,9 @@ h2 span {
     display: block;
     margin: 0 auto;
 
+    @include mq(tab) {
+    }
+
     @include mq(pc) {
       width: 200px;
       align-items: center;
@@ -894,12 +902,16 @@ h2 span {
 }
 
 .lineup-title {
-  font-size: 12px;
+  font-size: 0.6em;
 }
 
 .prace-spacing {
   margin-left: 40px;
   font-size: 10px;
+
+  @include mq(tab) {
+    margin: 0;
+  }
 
   @include mq(pc) {
     font-size: 16px;
@@ -918,8 +930,7 @@ h2 span {
 }
 
 .gift-right {
-  // width: 194px;
-  margin: 0 auto;
+  margin: 0 3% auto 0;
   margin-top: 8px;
 
   @include mq(pc) {
@@ -943,22 +954,22 @@ h2 span {
 }
 
 #gift-nomal {
-  width: 164px;
+  width: 100%;
   display: block;
   margin: 0 auto;
 
   @include mq(tab) {
-    width: 320px;
+    width: 65%;
   }
 }
 
 #gift-red {
-  width: 194px;
+  width: 100%;
   display: block;
   margin: 0 auto;
 
   @include mq(tab) {
-    width: 370px;
+    width: 65%;
   }
 }
 

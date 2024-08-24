@@ -1,8 +1,4 @@
 @charset "UTF-8";
-* {
-  outline: 1px solid magenta;
-}
-
 body {
   font-family: "Times New Roman", Times, serif;
 }
@@ -332,13 +328,12 @@ h2 span {
 .section-title {
   display: flex;
   justify-content: center;
-  margin-top: 100px;
-  margin-bottom: 40px;
+  margin: 10% 0;
   align-items: center;
 }
 @media screen and (min-width: 768px) {
   .section-title {
-    margin: 100px auto;
+    margin: 10% auto;
   }
 }
 .section-title img {
@@ -360,6 +355,9 @@ h2 span {
   }
 }
 
+#CONCEPT {
+  overflow: hidden;
+}
 #CONCEPT p {
   text-align: center;
   font-size: 14px;
@@ -378,7 +376,7 @@ h2 span {
 }
 @media screen and (min-width: 768px) {
   #CONCEPT img {
-    margin: 150px 0;
+    margin: 0;
     height: auto;
   }
 }
@@ -424,8 +422,7 @@ h2 span {
 #history-text1-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  margin-bottom: 20px;
+  margin-bottom: 5%;
 }
 
 #history_img {
@@ -433,7 +430,7 @@ h2 span {
 }
 @media screen and (min-width: 768px) {
   #history_img {
-    width: 559px;
+    width: 80%;
   }
 }
 @media screen and (min-width: 1025px) {
@@ -472,7 +469,8 @@ h2 span {
 }
 @media screen and (min-width: 768px) {
   .history-text1 {
-    font-size: 14px;
+    font-size: 1.3em;
+    margin-right: auto;
   }
 }
 @media screen and (min-width: 1025px) {
@@ -482,6 +480,10 @@ h2 span {
   }
 }
 
+.history-text1-right {
+  margin-left: 10%;
+}
+
 #history-text2 {
   text-align: start;
   font-size: 11px;
@@ -489,7 +491,7 @@ h2 span {
 }
 @media screen and (min-width: 768px) {
   #history-text2 {
-    font-size: 16px;
+    font-size: 1.3em;
   }
   #history-text2 br {
     display: none;
@@ -676,7 +678,7 @@ h2 span {
   #product-box {
     width: 364px;
     top: 30%;
-    left: 15%;
+    left: 10%;
   }
 }
 @media screen and (min-width: 1025px) {
@@ -697,7 +699,7 @@ h2 span {
   #choco-product {
     width: 458px;
     top: 60%;
-    left: 44%;
+    left: 36%;
   }
 }
 @media screen and (min-width: 1025px) {
@@ -819,9 +821,8 @@ h2 span {
 @media screen and (min-width: 768px) {
   #lineup-wrapper {
     display: flex;
-    position: relative;
+    justify-content: center;
     margin: 0 auto;
-    width: 720px;
   }
 }
 @media screen and (min-width: 1025px) {
@@ -869,12 +870,17 @@ h2 span {
 }
 
 .lineup-title {
-  font-size: 12px;
+  font-size: 0.6em;
 }
 
 .prace-spacing {
   margin-left: 40px;
   font-size: 10px;
+}
+@media screen and (min-width: 768px) {
+  .prace-spacing {
+    margin: 0;
+  }
 }
 @media screen and (min-width: 1025px) {
   .prace-spacing {
@@ -892,7 +898,7 @@ h2 span {
 }
 
 .gift-right {
-  margin: 0 auto;
+  margin: 0 3% auto 0;
   margin-top: 8px;
 }
 @media screen and (min-width: 1025px) {
@@ -914,24 +920,24 @@ h2 span {
   }
 }
 #gift-nomal {
-  width: 164px;
+  width: 100%;
   display: block;
   margin: 0 auto;
 }
 @media screen and (min-width: 768px) {
   #gift-nomal {
-    width: 320px;
+    width: 65%;
   }
 }
 
 #gift-red {
-  width: 194px;
+  width: 100%;
   display: block;
   margin: 0 auto;
 }
 @media screen and (min-width: 768px) {
   #gift-red {
-    width: 370px;
+    width: 65%;
   }
 }
 
