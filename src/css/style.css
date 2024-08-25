@@ -211,10 +211,12 @@ nav.is-active {
   opacity: 1;
   color: #554a45;
   text-align: center;
+  width: 100%;
   display: block;
 }
 nav.is-active ul li {
   padding: 40px 0;
+  width: 100%;
 }
 
 .btnHamburger p {
