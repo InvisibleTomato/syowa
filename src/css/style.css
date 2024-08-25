@@ -441,7 +441,7 @@ h2 span {
 }
 @media screen and (min-width: 1025px) {
   #HISTORY {
-    height: 1800px;
+    height: 2000px;
   }
 }
 #HISTORY .history-flex {
@@ -593,7 +593,7 @@ h2 span {
   #copy {
     height: 900px;
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 0%;
   }
 }
@@ -638,7 +638,7 @@ h2 span {
 @media screen and (min-width: 1025px) {
   #side-face {
     width: 60%;
-    top: 50%;
+    top: 55%;
     left: 35%;
   }
 }
@@ -952,6 +952,11 @@ h2 span {
 
 .gift-left {
   margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .gift-left {
+    margin-left: 3%;
+  }
 }
 @media screen and (min-width: 1025px) {
   .gift-left {

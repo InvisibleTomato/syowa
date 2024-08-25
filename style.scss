@@ -477,7 +477,7 @@ h2 span {
   }
 
   @include mq(pc) {
-    height: 1800px;
+    height: 2000px;
   }
 
   .history-flex {
@@ -623,7 +623,7 @@ h2 span {
   @include mq(pc) {
     height: 900px;
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 0%;
   }
 
@@ -667,7 +667,7 @@ h2 span {
 
   @include mq(pc) {
     width: 60%;
-    top: 50%;
+    top: 55%;
     left: 35%;
   }
 }
@@ -978,6 +978,10 @@ h2 span {
 .gift-left {
   // width: 164px;
   margin: 0 auto;
+
+  @include mq(tab) {
+    margin-left: 3%;
+  }
 
   @include mq(pc) {
     margin-left: 20%;
