@@ -1,3 +1,5 @@
+//開発効率化のためローディングアニメーションをコメントアウト
+
 //ローディング画面
 // const loadingScreen = document.getElementById("loading-screen");
 // const loadingText = document.getElementById("loading-text");
@@ -28,6 +30,8 @@
 //         console.error("エラー:", error);
 //     });
 // });
+
+//一時コメントアウトのローディングアニメーションここまで
 
 //ハンバーガー
 document.addEventListener("DOMContentLoaded", function () {
