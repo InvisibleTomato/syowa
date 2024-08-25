@@ -22,6 +22,10 @@ body {
 
 a {
   text-decoration: none;
+  &:hover {
+    opacity: 0.7;
+    transition: 0.3s;
+  }
 }
 
 img {
@@ -183,11 +187,6 @@ nav {
     @include mq(pc) {
       display: block;
       font-size: 20px;
-
-      &:hover {
-        opacity: 0.7;
-        transition: 0.3s;
-      }
     }
   }
 
@@ -274,20 +273,20 @@ header {
   position: fixed;
   height: 50px;
   z-index: 1000;
-}
 
-header h1 {
-  position: fixed;
-  top: 3%;
-  left: 3%;
+  h1 {
+    position: fixed;
+    top: 3%;
+    left: 3%;
 
-  @include mq(tab) {
-    left: 48%;
-    width: 30px;
-  }
+    @include mq(tab) {
+      left: 48%;
+      width: 30px;
+    }
 
-  @include mq(pc) {
-    z-index: 2000;
+    @include mq(pc) {
+      z-index: 2000;
+    }
   }
 }
 
@@ -1074,13 +1073,6 @@ h2 span {
   @include mq(tab) {
     font-size: 18px;
   }
-
-  &:hover {
-    @include mq(pc) {
-      opacity: 0.7;
-      transition: 0.3s;
-    }
-  }
 }
 
 // topics
@@ -1289,13 +1281,6 @@ h2 span {
       font-size: 20px;
       margin-bottom: -100px;
     }
-
-    @include mq(pc) {
-      &:hover {
-        opacity: 0.7;
-        transition: 0.3s;
-      }
-    }
   }
 }
 
@@ -1420,12 +1405,6 @@ iframe {
     margin: 40px auto;
 
     a {
-      @include mq(pc) {
-        &:hover {
-          opacity: 0.7;
-          transition: 0.3s;
-        }
-      }
       img {
         width: 40px;
       }
@@ -1517,6 +1496,13 @@ iframe {
             height: 60px;
             border-radius: 30px;
             letter-spacing: 2px;
+          }
+
+          @include mq(pc) {
+            &:hover {
+              opacity: 0.7;
+              transition: 0.3s;
+            }
           }
         }
       }

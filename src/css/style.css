@@ -6,6 +6,10 @@ body {
 a {
   text-decoration: none;
 }
+a:hover {
+  opacity: 0.7;
+  transition: 0.3s;
+}
 
 img {
   width: 100%;
@@ -168,10 +172,6 @@ nav ul li a {
     display: block;
     font-size: 20px;
   }
-  nav ul li a:hover {
-    opacity: 0.7;
-    transition: 0.3s;
-  }
 }
 @media screen and (min-width: 768px) {
   nav {
@@ -253,7 +253,6 @@ header {
   height: 50px;
   z-index: 1000;
 }
-
 header h1 {
   position: fixed;
   top: 3%;
@@ -1054,12 +1053,6 @@ h2 span {
     font-size: 18px;
   }
 }
-@media screen and (min-width: 1025px) {
-  #detail:hover {
-    opacity: 0.7;
-    transition: 0.3s;
-  }
-}
 
 #TOPICS {
   position: relative;
@@ -1285,12 +1278,6 @@ h2 span {
     margin-bottom: -100px;
   }
 }
-@media screen and (min-width: 1025px) {
-  .chart a:hover {
-    opacity: 0.7;
-    transition: 0.3s;
-  }
-}
 
 #movie {
   width: 355px;
@@ -1408,12 +1395,6 @@ iframe {
   width: 158px;
   margin: 40px auto;
 }
-@media screen and (min-width: 1025px) {
-  #CONTACT #contact-icon a:hover {
-    opacity: 0.7;
-    transition: 0.3s;
-  }
-}
 #CONTACT #contact-icon a img {
   width: 40px;
 }
@@ -1498,6 +1479,12 @@ iframe {
     height: 60px;
     border-radius: 30px;
     letter-spacing: 2px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  #CONTACT article section form #submit-button:hover {
+    opacity: 0.7;
+    transition: 0.3s;
   }
 }
 
