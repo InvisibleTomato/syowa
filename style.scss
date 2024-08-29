@@ -1505,16 +1505,18 @@ iframe {
     @include mq(tab) {
       font-size: 18px;
       position: absolute;
-      top: 40%;
+      top: 50%;
       left: 55%;
+      margin: 0;
     }
 
     @include mq(pc) {
       font-size: 20px;
       width: 128px;
       line-height: 52px;
-      top: 30%;
+      top: 35%;
       left: 65%;
+      margin: 0;
     }
   }
 
@@ -1537,13 +1539,15 @@ iframe {
 
     @include mq(tab) {
       position: absolute;
-      top: 55%;
-      left: 60%;
+      top: 60%;
+      left: 55%;
+      margin: 0;
     }
 
     @include mq(pc) {
-      left: 67%;
-      top: 40%;
+      left: 65%;
+      top: 45%;
+      margin: 0;
     }
   }
 }

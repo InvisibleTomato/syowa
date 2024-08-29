@@ -1528,8 +1528,9 @@ iframe {
   #ACCESS #sibuya-honten {
     font-size: 18px;
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 55%;
+    margin: 0;
   }
 }
 @media screen and (min-width: 1025px) {
@@ -1537,8 +1538,9 @@ iframe {
     font-size: 20px;
     width: 128px;
     line-height: 52px;
-    top: 30%;
+    top: 35%;
     left: 65%;
+    margin: 0;
   }
 }
 #ACCESS p {
@@ -1559,14 +1561,16 @@ iframe {
 @media screen and (min-width: 768px) {
   #ACCESS #access-text-wrapper {
     position: absolute;
-    top: 55%;
-    left: 60%;
+    top: 60%;
+    left: 55%;
+    margin: 0;
   }
 }
 @media screen and (min-width: 1025px) {
   #ACCESS #access-text-wrapper {
-    left: 67%;
-    top: 40%;
+    left: 65%;
+    top: 45%;
+    margin: 0;
   }
 }
 
