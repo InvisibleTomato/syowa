@@ -272,6 +272,89 @@ header h1 {
   }
 }
 
+.rose-nav1 {
+  position: absolute;
+  bottom: 0%;
+  left: -10%;
+  overflow: hidden;
+  width: 35%;
+  z-index: -10;
+  opacity: 0.7;
+}
+
+.rose-nav2 {
+  position: absolute;
+  top: 25%;
+  right: 0%;
+  overflow: hidden;
+  width: 25%;
+  z-index: -10;
+  opacity: 0.7;
+}
+
+.rose-history1 {
+  position: absolute;
+  top: 27%;
+  right: 0%;
+  overflow: hidden;
+  width: 25%;
+  z-index: -10;
+}
+
+.rose-product1 {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  overflow: hidden;
+  width: 25%;
+  z-index: -10;
+}
+
+.rose-product2 {
+  position: absolute;
+  top: 0%;
+  left: -10%;
+  overflow: hidden;
+  width: 30%;
+  z-index: -10;
+}
+
+.rose-lineup {
+  position: absolute;
+  top: -5%;
+  right: 0%;
+  overflow: hidden;
+  width: 30%;
+  z-index: -10;
+}
+
+.rose-topics {
+  position: absolute;
+  top: 90%;
+  right: 0%;
+  overflow: hidden;
+  width: 20%;
+  z-index: -10;
+}
+
+.rose-movie {
+  position: absolute;
+  top: 107%;
+  left: 0%;
+  overflow: hidden;
+  width: 20%;
+  z-index: -10;
+}
+
+.rose-contact {
+  position: absolute;
+  top: 10%;
+  left: -5%;
+  overflow: hidden;
+  width: 20%;
+  z-index: -10;
+}
+
 .top-main {
   position: relative;
   z-index: -10;
@@ -375,6 +458,11 @@ h2 span {
 
 #CONCEPT {
   overflow: hidden;
+}
+@media screen and (min-width: 1025px) {
+  #CONCEPT {
+    padding: 10% 0 0 0;
+  }
 }
 #CONCEPT p {
   text-align: center;
@@ -669,7 +757,7 @@ h2 span {
 
 #PRODUCT {
   height: 800px;
-  padding: 10% 0 0 0;
+  padding: 20% 0 0 0;
 }
 @media screen and (min-width: 768px) {
   #PRODUCT {
@@ -843,6 +931,10 @@ h2 span {
   }
 }
 
+#LINEUP {
+  position: relative;
+  padding: 20% 0 0 0;
+}
 @media screen and (min-width: 1025px) {
   #LINEUP {
     padding: 10% 0 0 0;
