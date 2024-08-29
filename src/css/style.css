@@ -262,7 +262,7 @@ header h1 {
 }
 @media screen and (min-width: 768px) {
   header h1 {
-    left: 48%;
+    left: 49%;
     width: 30px;
   }
 }
@@ -297,7 +297,7 @@ h2 {
   color: #fff;
   position: absolute;
   top: 25%;
-  left: 48%;
+  left: 49%;
   z-index: 100;
   text-shadow: 0 0 5px #fff;
 }
