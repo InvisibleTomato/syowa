@@ -444,6 +444,7 @@ h2 span {
 @media screen and (min-width: 1025px) {
   #HISTORY {
     height: 2000px;
+    padding: 10% 0 0 0;
   }
 }
 #HISTORY .history-flex {
@@ -668,6 +669,7 @@ h2 span {
 
 #PRODUCT {
   height: 800px;
+  padding: 10% 0 0 0;
 }
 @media screen and (min-width: 768px) {
   #PRODUCT {
@@ -841,6 +843,11 @@ h2 span {
   }
 }
 
+@media screen and (min-width: 1025px) {
+  #LINEUP {
+    padding: 10% 0 0 0;
+  }
+}
 #LINEUP p {
   color: #2a231f;
   text-align: center;
@@ -949,6 +956,12 @@ h2 span {
 @media screen and (min-width: 1025px) {
   .prace-spacing {
     font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  #GIFT {
+    padding: 10% 0 0 0;
   }
 }
 
@@ -1062,6 +1075,7 @@ h2 span {
 
 #TOPICS {
   position: relative;
+  padding: 10% 0 0 0;
 }
 
 #topics-cap {
@@ -1285,6 +1299,12 @@ h2 span {
   }
 }
 
+@media screen and (min-width: 1025px) {
+  #MOVIE {
+    padding: 10% 0 0 0;
+  }
+}
+
 #movie {
   width: 355px;
   margin: 0 auto;
@@ -1315,6 +1335,9 @@ iframe {
   }
 }
 
+#ACCESS {
+  padding: 10% 0 0 0;
+}
 @media screen and (min-width: 768px) {
   #ACCESS {
     position: relative;
@@ -1381,6 +1404,9 @@ iframe {
   }
 }
 
+#CONTACT {
+  padding: 10% 0 0 0;
+}
 #CONTACT #contact-text {
   font-size: 10px;
   color: #554a45;

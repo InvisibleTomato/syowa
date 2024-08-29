@@ -479,6 +479,7 @@ h2 span {
 
   @include mq(pc) {
     height: 2000px;
+    padding: 10% 0 0 0;
   }
 
   .history-flex {
@@ -696,7 +697,7 @@ h2 span {
 
 #PRODUCT {
   height: 800px;
-
+  padding: 10% 0 0 0;
   @include mq(tab) {
     height: 700px;
     margin-bottom: 550px;
@@ -862,6 +863,9 @@ h2 span {
 //LINEUP
 
 #LINEUP {
+  @include mq(pc) {
+    padding: 10% 0 0 0;
+  }
   p {
     color: #2a231f;
     text-align: center;
@@ -976,6 +980,12 @@ h2 span {
 
 //GIFT
 
+#GIFT {
+  @include mq(pc) {
+    padding: 10% 0 0 0;
+  }
+}
+
 .gift-left {
   // width: 164px;
   margin: 0 auto;
@@ -1083,6 +1093,7 @@ h2 span {
 
 #TOPICS {
   position: relative;
+  padding: 10% 0 0 0;
 }
 
 #topics-cap {
@@ -1290,6 +1301,12 @@ h2 span {
 
 //MOVIE
 
+#MOVIE {
+  @include mq(pc) {
+    padding: 10% 0 0 0;
+  }
+}
+
 #movie {
   width: 355px;
   margin: 0 auto;
@@ -1321,6 +1338,7 @@ iframe {
 }
 
 #ACCESS {
+  padding: 10% 0 0 0;
   @include mq(tab) {
     position: relative;
   }
@@ -1388,6 +1406,8 @@ iframe {
 //CONTACT
 
 #CONTACT {
+  padding: 10% 0 0 0;
+
   #contact-text {
     font-size: 10px;
     color: #554a45;
