@@ -281,6 +281,16 @@ header h1 {
   z-index: -10;
   opacity: 0.7;
 }
+@media screen and (min-width: 768px) {
+  .rose-nav1 {
+    bottom: -40%;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .rose-nav1 {
+    display: none;
+  }
+}
 
 .rose-nav2 {
   position: absolute;
@@ -291,6 +301,16 @@ header h1 {
   z-index: -10;
   opacity: 0.7;
 }
+@media screen and (min-width: 768px) {
+  .rose-nav2 {
+    top: 0%;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .rose-nav2 {
+    display: none;
+  }
+}
 
 .rose-history1 {
   position: absolute;
@@ -299,6 +319,17 @@ header h1 {
   overflow: hidden;
   width: 25%;
   z-index: -10;
+  opacity: 0.7;
+}
+@media screen and (min-width: 768px) {
+  .rose-history1 {
+    top: 35%;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .rose-history1 {
+    width: 15%;
+  }
 }
 
 .rose-product1 {
@@ -308,6 +339,12 @@ header h1 {
   overflow: hidden;
   width: 25%;
   z-index: -10;
+  opacity: 0.7;
+}
+@media screen and (min-width: 1025px) {
+  .rose-product1 {
+    width: 15%;
+  }
 }
 
 .rose-product2 {
@@ -317,6 +354,14 @@ header h1 {
   overflow: hidden;
   width: 30%;
   z-index: -10;
+  opacity: 0.7;
+}
+@media screen and (min-width: 1025px) {
+  .rose-product2 {
+    width: 15%;
+    left: 0%;
+    top: 50%;
+  }
 }
 
 .rose-lineup {
@@ -326,6 +371,17 @@ header h1 {
   overflow: hidden;
   width: 30%;
   z-index: -10;
+  opacity: 0.7;
+}
+@media screen and (min-width: 768px) {
+  .rose-lineup {
+    width: 25%;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .rose-lineup {
+    width: 15%;
+  }
 }
 
 .rose-topics {
@@ -335,6 +391,12 @@ header h1 {
   overflow: hidden;
   width: 20%;
   z-index: -10;
+  opacity: 0.7;
+}
+@media screen and (min-width: 1025px) {
+  .rose-topics {
+    width: 15%;
+  }
 }
 
 .rose-movie {
@@ -344,15 +406,27 @@ header h1 {
   overflow: hidden;
   width: 20%;
   z-index: -10;
+  opacity: 0.7;
+}
+@media screen and (min-width: 1025px) {
+  .rose-movie {
+    width: 15%;
+  }
 }
 
 .rose-contact {
   position: absolute;
-  top: 10%;
-  left: -5%;
+  top: 0%;
+  right: 0%;
   overflow: hidden;
   width: 20%;
   z-index: -10;
+  opacity: 0.7;
+}
+@media screen and (min-width: 1025px) {
+  .rose-contact {
+    width: 15%;
+  }
 }
 
 .top-main {

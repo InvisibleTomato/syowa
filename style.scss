@@ -301,6 +301,14 @@ header {
   width: 35%;
   z-index: -10;
   opacity: 0.7;
+
+  @include mq(tab) {
+    bottom: -40%;
+  }
+
+  @include mq(pc) {
+    display: none;
+  }
 }
 
 .rose-nav2 {
@@ -311,6 +319,13 @@ header {
   width: 25%;
   z-index: -10;
   opacity: 0.7;
+  @include mq(tab) {
+    top: 0%;
+  }
+
+  @include mq(pc) {
+    display: none;
+  }
 }
 
 .rose-history1 {
@@ -320,6 +335,14 @@ header {
   overflow: hidden;
   width: 25%;
   z-index: -10;
+  opacity: 0.7;
+  @include mq(tab) {
+    top: 35%;
+  }
+
+  @include mq(pc) {
+    width: 15%;
+  }
 }
 
 .rose-product1 {
@@ -329,6 +352,10 @@ header {
   overflow: hidden;
   width: 25%;
   z-index: -10;
+  opacity: 0.7;
+  @include mq(pc) {
+    width: 15%;
+  }
 }
 
 .rose-product2 {
@@ -338,6 +365,12 @@ header {
   overflow: hidden;
   width: 30%;
   z-index: -10;
+  opacity: 0.7;
+  @include mq(pc) {
+    width: 15%;
+    left: 0%;
+    top: 50%;
+  }
 }
 
 .rose-lineup {
@@ -347,6 +380,14 @@ header {
   overflow: hidden;
   width: 30%;
   z-index: -10;
+  opacity: 0.7;
+  @include mq(tab) {
+    width: 25%;
+  }
+
+  @include mq(pc) {
+    width: 15%;
+  }
 }
 
 .rose-topics {
@@ -356,6 +397,10 @@ header {
   overflow: hidden;
   width: 20%;
   z-index: -10;
+  opacity: 0.7;
+  @include mq(pc) {
+    width: 15%;
+  }
 }
 
 .rose-movie {
@@ -365,15 +410,24 @@ header {
   overflow: hidden;
   width: 20%;
   z-index: -10;
+  opacity: 0.7;
+  @include mq(pc) {
+    width: 15%;
+  }
 }
 
 .rose-contact {
   position: absolute;
-  top: 10%;
-  left: -5%;
+  top: 0%;
+  right: 0%;
   overflow: hidden;
   width: 20%;
   z-index: -10;
+  opacity: 0.7;
+
+  @include mq(pc) {
+    width: 15%;
+  }
 }
 
 //top-main
